@@ -1,0 +1,23 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fois de compilation
+node_modules/
+.sass-cache/
+
+# Fichiers d'environnement
+.env
+
+# Fichiers de l'éditeur
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Fichiers de build
+dist/
+build/
+
+# Fichiers de cache
+.cache/

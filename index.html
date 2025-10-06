@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel GUITTON - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo" style="height: 80px; display: flex; align-items: center; padding: 10px 0; margin-right: 30px;">
+                <a href="#accueil" style="display: flex; align-items: center; height: 100%;">
+                    <div style="background-color: white; padding: 8px; border-radius: 4px; height: 100%; display: flex; align-items: center;">
+                        <img src="assets/images/logo-trans-322x84.png" alt="Arts et Métiers" style="height: 100%; width: auto; max-width: 250px; display: block;">
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-links" style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0;">
+                <li><a href="#accueil" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">À propos</a></li>
+                <li><a href="#competences" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Compétences</a></li>
+                <li><a href="#projets" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Projets</a></li>
+                <li><a href="#contact" class="nav-link" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="container">
+            <h1 class="fade-in">Samuel GUITTON</h1>
+            <p class="tagline fade-in">Etudiant Bachelor Technologie - 2ème année
+                Ecole National Supérieur des Arts & Métiers</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Me contacter</a>
+                <a href="#projets" class="btn btn-outline">Voir mes projets</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="intro-text">Bonjour, je m'appelle Samuel Guitton, je suis actuellement en deuxième année du Bachelor de Technologie aux Arts et Métiers de Bordeaux.</p>
+                    
+                    <div class="about-details">
+                        <p>Tout d'abord, mon parcours m'a permis d'acquérir de solides bases techniques, à la fois en conception et en fabrication. Par exemple, lors de mon stage de 3ème chez ADEFI, j'ai travaillé sur la CAO avec CATIA V5, la lecture de plans et l'impression 3D, ce qui m'a donné un premier aperçu du cycle de développement d'un projet industriel.</p>
+                        
+                        <p>Ensuite, j'ai pu renforcer mon expérience pratique lors de mon stage de 4 semaines à l'EDF CNPE du Blayais, où j'ai participé à des missions d'usinage, de rodage et de maintenance. Ces expériences m'ont permis d'être à l'aise aussi bien dans la partie conception que dans la partie opérationnelle, en lien direct avec le terrain.</p>
+                        
+                        <p>Enfin, au-delà de mes études, je pratique le VTT en compétition depuis plusieurs années, jusqu'au niveau national. Cela m'a appris la rigueur, la persévérance et l'esprit d'équipe, des qualités que je retrouve dans le monde professionnel. Je m'intéresse aussi à l'impression 3D et à l'usinage, activités que je développe en parallèle, et qui me permettent de rester curieux et passionné par la technique.</p>
+                        
+                        <p>À court terme, mon objectif est de poursuivre mon Bachelor en consolidant mes compétences grâce à des stages en milieu industriel, dans la perspective de m'orienter ensuite vers des projets liés à l'innovation technologique et au développement durable.</p>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Formation</h4>
+                                <p>Bachelor de Technologie</p>
+                                <p class="text-muted">Arts et Métiers de Bordeaux</p>
+                                <p class="text-muted">2023 - 2026</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Expériences</h4>
+                                <p>Stage - EDF CNPE du Blayais</p>
+                                <p class="text-muted">2023</p>
+                                <p>Stage - ADEFI</p>
+                                <p class="text-muted">2019</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h4>Centres d'intérêt</h4>
+                                <p>VTT Compétition</p>
+                                <p>Impression 3D</p>
+                                <p>Usinage</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-download">
+                        <a href="CV_Samuel_GUITTON_2025-26.pdf" class="btn btn-primary" download="CV_Samuel_GUITTON_2025-26.pdf">
+                            <i class="fas fa-download"></i> Télécharger mon CV
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> Me contacter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Mes Compétences</h2>
+            <p class="section-subtitle">Un aperçu de mes compétences techniques et professionnelles</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Développement</h3>
+                    <ul class="skill-list">
+                        <li>Python, JavaScript, HTML5/CSS3</li>
+                        <li>React, Node.js, Express</li>
+                        <li>Bases de données SQL/NoSQL</li>
+                        <li>Git & Méthodes agiles</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>IA & Data Science</h3>
+                    <ul class="skill-list">
+                        <li>Machine Learning</li>
+                        <li>Traitement du langage naturel</li>
+                        <li>Analyse de données</li>
+                        <li>Visualisation de données</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Ingénierie & Gestion</h3>
+                    <ul class="skill-list">
+                        <li>Conception mécanique</li>
+                        <li>Gestion de projet</li>
+                        <li>Travail d'équipe</li>
+                        <li>Résolution de problèmes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="projects">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <p class="section-subtitle">Découvrez une sélection de mes réalisations</p>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Développement Web</button>
+                <button class="filter-btn" data-filter="ia">IA & Data</button>
+                <button class="filter-btn" data-filter="ingenierie">Ingénierie</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Les projets seront ajoutés dynamiquement via JavaScript -->
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="#" class="btn btn-outline">Voir tous les projets</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <p class="section-subtitle">N'hésitez pas à me contacter pour toute opportunité ou collaboration</p>
+            
+            <div class="contact-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="contact-info">
+                    <div class="contact-item" style="margin-bottom: 30px;">
+                        <div class="contact-icon" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-color);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:samuel.guitton@ensam.eu">samuel.guitton@ensam.eu</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" style="margin-bottom: 30px;">
+                        <div class="contact-icon" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-color);">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <a href="tel:+33612345678" style="font-size: 1.2rem;">+33 6 12 34 56 78</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links" style="margin-top: 40px;">
+                        <h3 style="margin-bottom: 20px;">Réseaux sociaux</h3>
+                        <div style="display: flex; justify-content: center; gap: 20px;">
+                            <a href="#" class="social-link" target="_blank" title="LinkedIn" style="font-size: 1.5rem; color: var(--secondary-color); transition: color 0.3s ease;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" target="_blank" title="GitHub" style="font-size: 1.5rem; color: var(--secondary-color); transition: color 0.3s ease;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
