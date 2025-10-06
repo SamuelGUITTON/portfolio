@@ -32,6 +32,7 @@ portfolio/
 ├── index.html          # Page principale
 ├── styles.css         # Feuille de style principale
 ├── script.js          # JavaScript pour les interactions
+├── assets/            # Dossier des ressources (images, etc.)
 └── README.md          # Ce fichier
 ```
 
@@ -39,7 +40,7 @@ portfolio/
 
 1. Clonez ce dépôt :
    ```bash
-   git clone [URL_DU_REPO]
+   git clone https://github.com/SamuelGUITTON/portfolio.git
    ```
 
 2. Ouvrez le fichier `index.html` dans votre navigateur préféré.
@@ -92,3 +93,6 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 <div align="center">
   Fait avec ❤️ par [Votre Nom]
 </div>
+=======
+# portfolio
+>>>>>>> e2821af16a4d843f6352b7214673923974d30bcf
