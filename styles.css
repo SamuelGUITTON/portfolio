@@ -286,7 +286,7 @@ nav.scrolled {
     padding: 5px 10px; /* Espacement intérieur */
     border-radius: 4px; /* Coins arrondis */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
-    margin-left: -15px; /* Décalage vers la gauche */
+    margin-left: -20px; /* Décalage vers la gauche */
 }
 
 .logo img {
