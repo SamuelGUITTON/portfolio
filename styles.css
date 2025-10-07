@@ -48,8 +48,8 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px; /* Décalage de 40px de chaque côté */
+    margin: 0 auto; /* Centrage du conteneur */
 }
 
 h1, h2, h3, h4, h5, h6 {
