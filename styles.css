@@ -278,17 +278,21 @@ nav.scrolled {
 .nav-links a:hover::after {
     width: 60%;
 }
-
 .logo {
-    height: 60px; /* Hauteur fixe pour le conteneur du logo */
+    height: 60px; /* hauteur fixe pour le conteneur du logo */
     display: flex;
     align-items: center;
+    background-color: white; /* Fond blanc pour le conteneur du logo */
+    padding: 5px 10px; /* Espacement intérieur */
+    border-radius: 4px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
 }
 
 .logo img {
     height: 100%;
     width: auto;
     max-width: 200px;
+    display: block; /* Pour éviter l'espace sous l'image */
     object-fit: contain;
 }
 
