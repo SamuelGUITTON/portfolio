@@ -1228,18 +1228,114 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Styles responsifs pour le tableau */
+/* Styles pour le tableau de valorisation */
+.valorisation {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px 0;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    background: white;
+}
+
+.valorisation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 0.9rem;
+    min-width: 1000px;
+}
+
+.valorisation-table thead th {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.valorisation-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.valorisation-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.valorisation-table tbody tr:hover {
+    background-color: rgba(248, 170, 0, 0.05);
+}
+
+.valorisation-table td {
+    padding: 15px;
+    vertical-align: top;
+    border-right: 1px solid #f0f0f0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.valorisation-table td:last-child {
+    border-right: none;
+}
+
+.valorisation-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-legend {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    border-left: 4px solid var(--primary-color);
+}
+
+.table-legend p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Styles responsifs */
+@media screen and (max-width: 1200px) {
+    .valorisation-table {
+        font-size: 0.85rem;
+    }
+    
+    .valorisation-table th,
+    .valorisation-table td {
+        padding: 12px 10px;
+    }
+}
+
 @media screen and (max-width: 992px) {
+    .table-responsive {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
     .valorisation-table {
         display: block;
+        min-width: 100%;
     }
     
     .valorisation-table thead {
         display: none;
     }
     
-    .valorisation-table tbody, 
-    .valorisation-table tr, 
+    .valorisation-table tbody,
+    .valorisation-table tr,
     .valorisation-table td {
         display: block;
         width: 100%;
@@ -1248,28 +1344,63 @@ footer p {
     .valorisation-table tr {
         margin-bottom: 20px;
         border: 1px solid #e0e0e0;
-        border-radius: var(--border-radius);
+        border-radius: 8px;
         overflow: hidden;
     }
     
     .valorisation-table td {
-        padding: 10px 15px;
+        padding: 12px 15px 12px 45%;
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
         position: relative;
-        padding-left: 40%;
     }
     
     .valorisation-table td:before {
         content: attr(data-label);
         position: absolute;
         left: 15px;
-        width: 35%;
-        padding-right: 10px;
+        width: 40%;
+        padding-right: 15px;
         font-weight: 600;
         color: var(--secondary-color);
     }
     
+    .valorisation-table td:last-child {
+        border-bottom: none;
+    }
+    
     .table-legend {
         margin: 20px 0;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .valorisation {
+        padding: 50px 0;
+    }
+    
+    .valorisation-table td {
+        padding-left: 50%;
+    }
+    
+    .valorisation-table td:before {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .valorisation-table td {
+        padding-left: 55%;
+    }
+    
+    .valorisation-table td:before {
+        width: 50%;
+        font-size: 0.8rem;
+    }
+    
+    .valorisation-table td {
+        font-size: 0.85rem;
     }
 }
 
