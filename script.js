@@ -1,3 +1,32 @@
+// Gestion de la navigation fluide
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+            
+            // Fermer le menu mobile si ouvert
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (hamburger && navLinks) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+            
+            // Mettre à jour l'URL sans recharger la page
+            history.pushState(null, '', targetId);
+        }
+    });
+});
+
 // Navigation mobile
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
