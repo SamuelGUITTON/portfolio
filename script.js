@@ -209,8 +209,8 @@ function setupCVDownload() {
             if (window.location.protocol === 'file:' || !this.download) {
                 e.preventDefault();
                 const link = document.createElement('a');
-                link.href = 'CV_Samuel_GUITTON_2025-26.pdf';
-                link.download = 'CV_Samuel_GUITTON_2025-26.pdf';
+                link.href = 'CV Samuel GUITTON 2025-26.pdf';
+                link.download = 'CV Samuel GUITTON 2025-26.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
