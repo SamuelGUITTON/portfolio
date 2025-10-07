@@ -1,3 +1,39 @@
+// Gestion des fiches de mission
+document.addEventListener('DOMContentLoaded', function() {
+    // Afficher uniquement les 3 fiches les plus récentes
+    const missionCards = Array.from(document.querySelectorAll('.mission-card'));
+    
+    // Trier les fiches par année (du plus récent au plus ancien)
+    missionCards.sort((a, b) => {
+        return parseInt(b.dataset.year) - parseInt(a.dataset.year);
+    });
+    
+    // Afficher les 3 premières fiches et cacher les autres
+    missionCards.forEach((card, index) => {
+        if (index < 3) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    // Gestion du bouton "Voir toutes les missions"
+    const showAllButton = document.getElementById('showAllMissions');
+    if (showAllButton) {
+        showAllButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Afficher toutes les fiches
+            missionCards.forEach(card => {
+                card.style.display = 'block';
+            });
+            
+            // Cacher le bouton après avoir tout affiché
+            showAllButton.style.display = 'none';
+        });
+    }
+});
+
 // Navigation mobile
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
