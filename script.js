@@ -17,9 +17,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Gestion du bouton "Voir toutes les missions"
+    // Gestion des boutons d'affichage des missions
     const showAllButton = document.getElementById('showAllMissions');
-    if (showAllButton) {
+    let showLessButton = document.getElementById('showLessMissions');
+    
+    // Créer le bouton "Voir moins" s'il n'existe pas
+    if (!showLessButton && showAllButton) {
+        const buttonContainer = showAllButton.parentElement;
+        showLessButton = document.createElement('button');
+        showLessButton.id = 'showLessMissions';
+        showLessButton.className = 'btn btn-outline';
+        showLessButton.textContent = 'Voir moins';
+        showLessButton.style.display = 'none';
+        showLessButton.style.marginLeft = '15px';
+        buttonContainer.appendChild(showLessButton);
+        
+        // Gestion du clic sur "Voir toutes les missions"
         showAllButton.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -28,8 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.display = 'block';
             });
             
-            // Cacher le bouton après avoir tout affiché
+            // Afficher le bouton "Voir moins" et masquer "Voir toutes les missions"
             showAllButton.style.display = 'none';
+            showLessButton.style.display = 'inline-block';
+        });
+        
+        // Gestion du clic sur "Voir moins"
+        showLessButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Afficher uniquement les 3 premières fiches
+            missionCards.forEach((card, index) => {
+                card.style.display = index < 3 ? 'block' : 'none';
+            });
+            
+            // Afficher le bouton "Voir toutes les missions" et masquer "Voir moins"
+            showAllButton.style.display = 'inline-block';
+            showLessButton.style.display = 'none';
         });
     }
 });
