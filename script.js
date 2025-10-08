@@ -4,16 +4,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
+    const html = document.documentElement;
+
+    // Fonction pour vérifier si on est sur mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    // Fonction pour activer/désactiver le défilement de la page
+    function toggleBodyScroll(enable) {
+        if (enable) {
+            body.style.overflow = '';
+            html.style.overflow = '';
+        } else {
+            body.style.overflow = 'hidden';
+            html.style.overflow = 'hidden';
+        }
+    }
 
     if (hamburger && navLinks) {
-        // Fonction pour basculer le menu
+        // Fonction pour ouvrir/fermer le menu
         function toggleMenu() {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            const isOpening = !hamburger.classList.contains('active');
+            
+            if (isOpening) {
+                // Ouvrir le menu
+                hamburger.classList.add('active');
+                navLinks.classList.add('active');
+                if (isMobile()) {
+                    toggleBodyScroll(false);
+                }
+            } else {
+                // Fermer le menu
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                toggleBodyScroll(true);
+            }
         }
 
-        // Événement de clic sur le bouton hamburger
+        // Gestion du clic sur le bouton hamburger
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
             toggleMenu();
@@ -28,13 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Fermer le menu lors du clic sur un lien
+        // Fermer le menu lors du clic sur un lien (mobile uniquement)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) { // Uniquement sur mobile
+                if (isMobile()) {
                     toggleMenu();
                 }
             });
+        });
+
+        // Gérer le redimensionnement de la fenêtre
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                // Sur desktop, s'assurer que le menu est fermé et que le défilement est activé
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                toggleBodyScroll(true);
+            }
         });
     }
     // Sélectionner toutes les cartes de mission

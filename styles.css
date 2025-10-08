@@ -419,10 +419,12 @@ header.navbar {
 .hamburger {
     display: none;
     cursor: pointer;
-    padding: 10px 0 10px 10px;
-    z-index: 1000;
+    padding: 15px 10px;
+    z-index: 1001;
     margin-left: auto;
+    margin-right: 30px; /* Décalage de 30px vers la droite */
     order: 2;
+    position: relative;
 }
 
 .bar {
@@ -2225,9 +2227,14 @@ footer p {
     }
     
     .container {
-        padding: 0 5px;
+        padding: 0 15px;
         width: 100%;
         max-width: 100%;
+    }
+    
+    .navbar > .container {
+        padding: 0 5px;
+        position: relative;
     }
     
     /* Navigation mobile */
@@ -2235,7 +2242,8 @@ footer p {
         display: block;
         z-index: 1001;
         padding: 15px 10px;
-        margin-right: 5px;
+        margin-right: 30px; /* Décalage de 30px vers la droite */
+        position: relative;
     }
     
     .navbar > .container {
@@ -2253,8 +2261,9 @@ footer p {
         background: var(--secondary-color);
         flex-direction: column;
         padding: 80px 20px 20px;
-        transition: 0.3s ease-in-out;
+        transition: right 0.3s ease-in-out;
         z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     }
     
     .nav-links.active {
