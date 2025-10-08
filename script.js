@@ -1,25 +1,39 @@
 // Gestion des fiches de mission
 document.addEventListener('DOMContentLoaded', function() {
-    // Afficher uniquement les 3 fiches les plus récentes
+    // Sélectionner toutes les cartes de mission
     const missionCards = Array.from(document.querySelectorAll('.mission-card'));
+    const VISIBLE_CARDS = 2; // Nombre de cartes visibles par défaut
     
     // Trier les fiches par année (du plus récent au plus ancien)
     missionCards.sort((a, b) => {
         return parseInt(b.dataset.year) - parseInt(a.dataset.year);
     });
     
-    // Afficher les 3 premières fiches et cacher les autres
-    missionCards.forEach((card, index) => {
-        if (index < 3) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-    
-    // Gestion des boutons d'affichage des missions
+    // Déclarer les variables des boutons en dehors de la fonction pour qu'elles soient accessibles partout
     const showAllButton = document.getElementById('showAllMissions');
     let showLessButton = document.getElementById('showLessMissions');
+
+    // Fonction pour afficher/masquer les cartes
+    function updateCardsVisibility(showAll = false) {
+        missionCards.forEach((card, index) => {
+            if (showAll || index < VISIBLE_CARDS) {
+                card.style.display = 'block';
+                card.classList.add('visible');
+            } else {
+                card.style.display = 'none';
+                card.classList.remove('visible');
+            }
+        });
+        
+        // Mettre à jour les boutons
+        if (showAllButton && showLessButton) {
+            showAllButton.style.display = showAll ? 'none' : 'inline-block';
+            showLessButton.style.display = showAll ? 'inline-block' : 'none';
+        }
+    }
+    
+    // Initialiser l'affichage des cartes
+    updateCardsVisibility(false);
     
     // Créer le bouton "Voir moins" s'il n'existe pas
     if (!showLessButton && showAllButton) {
@@ -35,29 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Gestion du clic sur "Voir toutes les missions"
         showAllButton.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Afficher toutes les fiches
-            missionCards.forEach(card => {
-                card.style.display = 'block';
-            });
-            
-            // Afficher le bouton "Voir moins" et masquer "Voir toutes les missions"
-            showAllButton.style.display = 'none';
-            showLessButton.style.display = 'inline-block';
+            updateCardsVisibility(true);
+            // Faire défiler doucement vers le bas pour voir les nouvelles cartes
+            setTimeout(() => {
+                showAllButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
         });
         
         // Gestion du clic sur "Voir moins"
         showLessButton.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Afficher uniquement les 3 premières fiches
-            missionCards.forEach((card, index) => {
-                card.style.display = index < 3 ? 'block' : 'none';
+            updateCardsVisibility(false);
+            // Faire défiler vers le haut pour voir les premières cartes
+            window.scrollTo({
+                top: document.querySelector('.projects').offsetTop - 100,
+                behavior: 'smooth'
             });
-            
-            // Afficher le bouton "Voir toutes les missions" et masquer "Voir moins"
-            showAllButton.style.display = 'inline-block';
-            showLessButton.style.display = 'none';
         });
     }
 });
