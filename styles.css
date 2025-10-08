@@ -42,15 +42,19 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
-    border: 1px solid #e0e0e0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
-    padding: 0 60px 0 40px; /* 60px à droite, 40px à gauche */
-    margin: 0 auto; /* Centrage du conteneur */
-    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1968,6 +1972,25 @@ footer p {
     
     .valorisation-table td:before {
         width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+        width: 100%;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .navbar .container {
+        padding: 0 10px;
+    }
+    
+    .nav-links {
+        padding: 0 10px;
     }
 }
 
