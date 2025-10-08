@@ -415,18 +415,23 @@ header.navbar {
     display: block;
 }
 
+/* Menu Hamburger */
 .hamburger {
     display: none;
     cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    margin-left: auto; /* Pousse le menu vers la droite */
+    order: 2; /* S'assure qu'il est à droite */
 }
 
-.hamburger span {
+.bar {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--primary-color);
-    margin: 5px 0;
-    transition: all 0.3s ease;
+    margin: 5px 0; /* Réduit la marge verticale */
+    transition: all 0.3s ease-in-out;
+    background-color: white;
 }
 
 /* Hero Section */
@@ -2207,7 +2212,7 @@ footer p {
     }
     
     .container {
-        padding: 0 15px;
+        padding: 0 10px; /* Réduit le padding latéral */
         width: 100%;
     }
     
@@ -2215,6 +2220,11 @@ footer p {
     .hamburger {
         display: block;
         z-index: 1000;
+        padding: 10px 5px; /* Réduit le padding horizontal */
+    }
+    
+    .navbar > .container {
+        padding: 0 5px; /* Réduit encore le padding du conteneur de navigation */
     }
     
     .nav-links {
