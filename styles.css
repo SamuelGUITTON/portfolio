@@ -2298,7 +2298,7 @@ footer p {
     }
     
     .mobile-select {
-        min-width: 140px;
+        min-width: 130px;
         padding: 10px 35px 10px 15px;
         font-size: 14px;
         font-weight: 500;
@@ -2328,7 +2328,7 @@ footer p {
     }
     
     .navbar .logo img {
-        max-width: 120px;
+        max-width: 100px;
         height: auto;
         transition: all 0.3s ease;
     }
