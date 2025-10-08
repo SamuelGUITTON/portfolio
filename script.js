@@ -1,5 +1,28 @@
 // Gestion des fiches de mission
 document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du menu hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            // Animation du bouton hamburger
+            hamburger.classList.toggle('active');
+            // Affichage du menu
+            navLinks.classList.toggle('active');
+            // Empêcher le défilement de la page lorsque le menu est ouvert
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Fermer le menu lorsqu'un lien est cliqué
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
     // Sélectionner toutes les cartes de mission
     const missionCards = Array.from(document.querySelectorAll('.mission-card'));
     const VISIBLE_CARDS = 2; // Nombre de cartes visibles par défaut
@@ -100,11 +123,7 @@ links.forEach(link => {
     });
 });
 
-// Changement de style de la navbar au scroll
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+// La barre de navigation conserve son apparence par défaut lors du défilement
 
 // Animation au défilement
 const fadeElements = document.querySelectorAll('.fade-in');
