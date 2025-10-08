@@ -424,21 +424,51 @@ header.navbar {
 }
 
 .mobile-select {
-    padding: 10px 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: var(--secondary-color);
+    padding: 10px 35px 10px 15px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding-right: 30px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour l'icône de flèche personnalisée */
+.mobile-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.mobile-select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid white;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.mobile-select:focus {
+    outline: none;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.mobile-select:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .mobile-select option {
@@ -2259,20 +2289,32 @@ footer p {
     }
     
     /* Style du sélecteur mobile */
+    .mobile-nav {
+        margin-right: 15px;
+    }
+    
     .mobile-select {
-        min-width: 120px; /* Largeur réduite */
-        padding: 8px 30px 8px 15px;
+        min-width: 140px;
+        padding: 10px 35px 10px 15px;
         font-size: 14px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        background-color: transparent;
+        font-weight: 500;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
         color: white;
         border-radius: 20px;
-        margin-left: 15px; /* Marge à gauche ajoutée */
+        margin-left: 10px;
+        transition: all 0.3s ease;
     }
     
     .mobile-select:focus {
         outline: none;
         border-color: white;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    }
+    
+    .mobile-select:hover {
+        background-color: rgba(255, 255, 255, 0.15);
     }
     
     /* Ajustement du conteneur du logo */
