@@ -1,81 +1,86 @@
 // Gestion du menu hamburger
 document.addEventListener('DOMContentLoaded', function() {
-    // Gestion du menu hamburger
+    // Sélection des éléments
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
     const html = document.documentElement;
 
-    // Fonction pour vérifier si on est sur mobile
-    function isMobile() {
-        return window.innerWidth <= 768;
+    // Vérification des éléments
+    if (!hamburger || !navLinks) {
+        console.error('Éléments du menu non trouvés');
+        return;
     }
+
+    // Fonction pour vérifier si on est sur mobile
+    const isMobile = () => window.innerWidth <= 768;
 
     // Fonction pour activer/désactiver le défilement de la page
-    function toggleBodyScroll(enable) {
-        if (enable) {
-            body.style.overflow = '';
-            html.style.overflow = '';
+    const toggleBodyScroll = (enable) => {
+        body.style.overflow = enable ? '' : 'hidden';
+        html.style.overflow = enable ? '' : 'hidden';
+    };
+
+    // Fonction pour ouvrir/fermer le menu
+    const toggleMenu = (forceClose = false) => {
+        const isOpening = forceClose ? false : !hamburger.classList.contains('active');
+        
+        if (isOpening) {
+            // Ouvrir le menu
+            hamburger.classList.add('active');
+            navLinks.classList.add('active');
+            if (isMobile()) {
+                toggleBodyScroll(false);
+            }
         } else {
-            body.style.overflow = 'hidden';
-            html.style.overflow = 'hidden';
+            // Fermer le menu
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            toggleBodyScroll(true);
         }
-    }
+        
+        console.log('Menu toggled:', isOpening ? 'open' : 'closed');
+    };
 
-    if (hamburger && navLinks) {
-        // Fonction pour ouvrir/fermer le menu
-        function toggleMenu() {
-            const isOpening = !hamburger.classList.contains('active');
-            
-            if (isOpening) {
-                // Ouvrir le menu
-                hamburger.classList.add('active');
-                navLinks.classList.add('active');
-                if (isMobile()) {
-                    toggleBodyScroll(false);
-                }
-            } else {
-                // Fermer le menu
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                toggleBodyScroll(true);
-            }
+    // Gestion du clic sur le bouton hamburger
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log('Hamburger clicked');
+        toggleMenu();
+    });
+
+    // Fermer le menu en cliquant en dehors
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !e.target.closest('.nav-links') && 
+            !e.target.closest('.hamburger')) {
+            console.log('Clicked outside, closing menu');
+            toggleMenu(true);
         }
+    });
 
-        // Gestion du clic sur le bouton hamburger
-        hamburger.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu();
-        });
-
-        // Fermer le menu en cliquant en dehors
-        document.addEventListener('click', function(e) {
-            if (navLinks.classList.contains('active') && 
-                !e.target.closest('.nav-links') && 
-                !e.target.closest('.hamburger')) {
-                toggleMenu();
+    // Fermer le menu lors du clic sur un lien (mobile uniquement)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMobile()) {
+                console.log('Link clicked on mobile, closing menu');
+                toggleMenu(true);
             }
         });
+    });
 
-        // Fermer le menu lors du clic sur un lien (mobile uniquement)
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (isMobile()) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        // Gérer le redimensionnement de la fenêtre
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                // Sur desktop, s'assurer que le menu est fermé et que le défilement est activé
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                toggleBodyScroll(true);
-            }
-        });
-    }
+    // Gérer le redimensionnement de la fenêtre
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            // Sur desktop, s'assurer que le menu est fermé et que le défilement est activé
+            console.log('Desktop view, ensuring menu is closed');
+            toggleMenu(true);
+        }
+    });
+    
+    // Initialisation
+    console.log('Menu script loaded');
     // Sélectionner toutes les cartes de mission
     const missionCards = Array.from(document.querySelectorAll('.mission-card'));
     const VISIBLE_CARDS = 2; // Nombre de cartes visibles par défaut
