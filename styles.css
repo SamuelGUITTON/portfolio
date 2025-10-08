@@ -415,39 +415,46 @@ header.navbar {
     display: block;
 }
 
-/* Menu Hamburger */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    padding: 15px 0 15px 10px;
-    z-index: 1001;
+/* Menu déroulant mobile */
+.mobile-nav {
+    display: none; /* Caché par défaut, affiché uniquement sur mobile */
     margin-left: auto;
-    margin-right: 60px; /* Augmentation du décalage à 60px */
-    order: 2;
     position: relative;
-    width: 30px;
+    z-index: 1000;
 }
 
-.bar {
+.mobile-select {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.mobile-select option {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+}
+
+/* Style pour le menu desktop */
+.desktop-nav {
     display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    transition: all 0.3s ease-in-out;
-    background-color: white;
 }
 
-/* Animation du bouton hamburger */
-.hamburger.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+/* Masquer le menu mobile par défaut */
+.mobile-nav {
+    display: none;
 }
 
 /* Hero Section */
@@ -2241,15 +2248,31 @@ footer p {
         align-items: center;
     }
     
-    /* Navigation mobile */
-    .hamburger {
+    /* Masquer la navigation desktop sur mobile */
+    .desktop-nav {
+        display: none;
+    }
+    
+    /* Afficher le menu déroulant mobile */
+    .mobile-nav {
         display: block;
-        z-index: 1001;
-        padding: 15px 0 15px 10px;
-        margin-right: 0;
-        position: relative;
-        width: 30px;
-        right: 0;
+        margin-right: 15px;
+    }
+    
+    /* Style du sélecteur mobile */
+    .mobile-select {
+        min-width: 150px;
+        padding: 8px 30px 8px 12px;
+        font-size: 14px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background-color: transparent;
+        color: white;
+        border-radius: 20px;
+    }
+    
+    .mobile-select:focus {
+        outline: none;
+        border-color: white;
     }
     
     /* Ajustement du conteneur du logo */
@@ -2257,11 +2280,9 @@ footer p {
         flex: 1;
     }
     
-    /* Conteneur de navigation */
-    .navbar nav {
-        position: relative;
-        width: auto;
-        margin-left: auto;
+    .navbar .logo img {
+        max-width: 150px;
+        height: auto;
     }
     
     .navbar > .container {

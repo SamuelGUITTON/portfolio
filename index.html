@@ -15,14 +15,7 @@
                     <img src="assets/images/logo-trans-322x84.png" alt="Arts et Métiers">
                 </a>
             </div>
-            <nav style="width: 100%; overflow: hidden;">
-                <!-- Menu Hamburger -->
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                
+            <nav class="desktop-nav">
                 <ul class="nav-links">
                     <li><a href="#accueil" class="nav-link">Accueil</a></li>
                     <li><a href="#apropos" class="nav-link">À propos</a></li>
@@ -33,6 +26,20 @@
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+            
+            <!-- Menu déroulant pour mobile -->
+            <div class="mobile-nav">
+                <select id="mobile-menu" class="mobile-select">
+                    <option value="">Menu</option>
+                    <option value="#accueil">Accueil</option>
+                    <option value="#apropos">À propos</option>
+                    <option value="#competences">Compétences</option>
+                    <option value="#projets">Fiches Missions</option>
+                    <option value="#valorisation">Expériences</option>
+                    <option value="plaquettes.html">Plaquette Formation</option>
+                    <option value="#contact">Contact</option>
+                </select>
+            </div>
         </div>
     </header>
 
