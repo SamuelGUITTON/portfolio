@@ -340,10 +340,9 @@ nav.scrolled {
     height: 60px; /* hauteur fixe pour le conteneur du logo */
     display: flex;
     align-items: center;
-    background-color: white; /* Fond blanc pour le conteneur du logo */
-    padding: 5px 10px; /* Espacement intérieur */
-    border-radius: 4px; /* Coins arrondis */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+    padding: 0 15px;
+    background-color: white;
+    border-radius: 8px;
     margin-left: -20px; /* Décalage vers la gauche */
 }
 
