@@ -2288,7 +2288,7 @@ footer p {
         display: flex;
         align-items: center;
         margin-left: auto;
-        margin-right: 10px;
+        margin-right: 0;
     }
     
     /* Style du sélecteur mobile */
@@ -2324,7 +2324,7 @@ footer p {
     /* Ajustement du conteneur du logo */
     .navbar .logo {
         flex: 0 0 auto;
-        margin-right: 15px;
+        margin-right: 20px;
     }
     
     .navbar .logo img {
@@ -2334,9 +2334,14 @@ footer p {
     }
     
     .navbar > .container {
-        padding: 0 10px;
+        padding: 0 15px;
         width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
         justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
     }
     
     .nav-links {
