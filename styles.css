@@ -419,19 +419,32 @@ header.navbar {
 .hamburger {
     display: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     z-index: 1000;
-    margin-left: auto; /* Pousse le menu vers la droite */
-    order: 2; /* S'assure qu'il est à droite */
+    margin-left: auto;
+    order: 2;
 }
 
 .bar {
     display: block;
     width: 25px;
     height: 3px;
-    margin: 5px 0; /* Réduit la marge verticale */
+    margin: 5px 0;
     transition: all 0.3s ease-in-out;
     background-color: white;
+}
+
+/* Animation du bouton hamburger */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Hero Section */
@@ -2207,24 +2220,54 @@ footer p {
 
 @media screen and (max-width: 768px) {
     :root {
-        --header-height: 70px; /* Réduire la hauteur de l'en-tête sur mobile */
-        --section-padding: 50px 0; /* Réduire l'espacement des sections */
+        --header-height: 70px;
+        --section-padding: 50px 0;
     }
     
     .container {
-        padding: 0 10px; /* Réduit le padding latéral */
+        padding: 0 5px;
         width: 100%;
+        max-width: 100%;
     }
     
     /* Navigation mobile */
     .hamburger {
         display: block;
-        z-index: 1000;
-        padding: 10px 5px; /* Réduit le padding horizontal */
+        z-index: 1001;
+        padding: 15px 10px;
+        margin-right: 5px;
     }
     
     .navbar > .container {
-        padding: 0 5px; /* Réduit encore le padding du conteneur de navigation */
+        padding: 0;
+        width: 100%;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--secondary-color);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .nav-links a {
+        color: white;
+        font-size: 1.1rem;
     }
     
     .nav-links {

@@ -1,25 +1,39 @@
-// Gestion des fiches de mission
+// Gestion du menu hamburger
 document.addEventListener('DOMContentLoaded', function() {
     // Gestion du menu hamburger
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
 
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            // Animation du bouton hamburger
+    if (hamburger && navLinks) {
+        // Fonction pour basculer le menu
+        function toggleMenu() {
             hamburger.classList.toggle('active');
-            // Affichage du menu
             navLinks.classList.toggle('active');
-            // Empêcher le défilement de la page lorsque le menu est ouvert
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Événement de clic sur le bouton hamburger
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
         });
 
-        // Fermer le menu lorsqu'un lien est cliqué
+        // Fermer le menu en cliquant en dehors
+        document.addEventListener('click', function(e) {
+            if (navLinks.classList.contains('active') && 
+                !e.target.closest('.nav-links') && 
+                !e.target.closest('.hamburger')) {
+                toggleMenu();
+            }
+        });
+
+        // Fermer le menu lors du clic sur un lien
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
+                if (window.innerWidth <= 768) { // Uniquement sur mobile
+                    toggleMenu();
+                }
             });
         });
     }
