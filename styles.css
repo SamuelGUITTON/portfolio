@@ -2256,18 +2256,18 @@ footer p {
     /* Afficher le menu déroulant mobile */
     .mobile-nav {
         display: block;
-        margin-right: 15px;
     }
     
     /* Style du sélecteur mobile */
     .mobile-select {
-        min-width: 150px;
-        padding: 8px 30px 8px 12px;
+        min-width: 120px; /* Largeur réduite */
+        padding: 8px 30px 8px 15px;
         font-size: 14px;
         border: 2px solid rgba(255, 255, 255, 0.3);
         background-color: transparent;
         color: white;
         border-radius: 20px;
+        margin-left: 15px; /* Marge à gauche ajoutée */
     }
     
     .mobile-select:focus {

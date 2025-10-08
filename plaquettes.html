@@ -103,13 +103,11 @@
             .nav-btn {
                 width: 80%;
                 justify-content: center;
-                padding: 12px 25px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Même en-tête que la page d'accueil -->
     <header class="navbar">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
             <div class="logo">
@@ -117,9 +115,9 @@
                     <img src="assets/images/logo-trans-322x84.png" alt="Arts et Métiers">
                 </a>
             </div>
-            <nav style="width: 100%; overflow: hidden;">
+            <nav class="desktop-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="index.html#apropos" class="nav-link">À propos</a></li>
                     <li><a href="index.html#competences" class="nav-link">Compétences</a></li>
                     <li><a href="index.html#projets" class="nav-link">Fiches Missions</a></li>
@@ -128,8 +126,6 @@
                     <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
 
     <!-- Section principale des plaquettes -->
     <section class="plaquettes-section" style="padding: 80px 0 60px;">
@@ -193,6 +189,57 @@
                     });
                 }
             });
+        });
+    </script>
+    <script>
+        // Gestion du menu déroulant mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenu) {
+                // Fonction pour gérer la navigation
+                const handleNavigation = () => {
+                    const selectedValue = mobileMenu.value;
+                    if (selectedValue) {
+                        if (selectedValue.startsWith('#')) {
+                            const targetElement = document.querySelector(selectedValue);
+                            if (targetElement) {
+                                targetElement.scrollIntoView({ behavior: 'smooth' });
+                                mobileMenu.blur();
+                            }
+                        } else if (selectedValue === '#') {
+                            // Ne rien faire si c'est la page actuelle
+                            mobileMenu.selectedIndex = 0;
+                        } else {
+                            window.location.href = selectedValue;
+                        }
+                    }
+                };
+                
+                // Écouter les changements de sélection
+                mobileMenu.addEventListener('change', function() {
+                    const selectedValue = this.value;
+                    if (selectedValue) {
+                        if (selectedValue.startsWith('#')) {
+                            const targetElement = document.querySelector(selectedValue);
+                            if (targetElement) {
+                                targetElement.scrollIntoView({ behavior: 'smooth' });
+                                this.blur();
+                            }
+                        } else if (selectedValue === '#') {
+                            // Ne rien faire si c'est la page actuelle
+                            this.selectedIndex = 0;
+                        } else {
+                            window.location.href = selectedValue;
+                        }
+                    }
+                });
+                
+                // Désactiver le clavier virtuel sur iOS
+                mobileMenu.addEventListener('focus', function() {
+                    this.blur();
+                });
+            }
         });
     </script>
 </body>
