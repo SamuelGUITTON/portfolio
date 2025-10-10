@@ -187,50 +187,87 @@
             
             <div class="projects-grid">
                 <!-- Fiche de Mission 1 (2024) -->
-                <div class="mission-card" data-filter="ingenierie" data-year="2024">
+                <div class="mission-card" data-filter="ingenierie" data-year="2025">
                     <div class="mission-image-container">
-                        <img src="assets/images/fiche-mission1_1.jpg" alt="Mission 1" class="mission-main-image">
+                        <img src="assets/images/fiche-mission1_1.jpg" alt="Atelier d'usinage" class="mission-main-image">
                     </div>
                     <div class="mission-header">
                         <h3>FICHE DE MISSION N°1</h3>
-                        <h2>Développement d'un système de surveillance intelligent</h2>
+                        <h2>Stage exécutant en usinage</h2>
                         <div class="mission-meta">
-                            <span class="mission-year">2024</span>
-                            <span class="mission-duration">6 mois</span>
+                            <span class="mission-year">2025</span>
+                            <span class="mission-duration">1 mois</span>
                         </div>
                     </div>
                     
                     <div class="mission-content">
                         <div class="mission-section">
                             <h4>📌 Poste :</h4>
-                            <p>Assistant ingénieur en automatisation industrielle</p>
+                            <p>Usineur</p>
                         </div>
                         
                         <div class="mission-section">
                             <h4>🎯 Mission :</h4>
-                            <p>Concevoir et mettre en œuvre un système de surveillance temps réel pour optimiser la maintenance prédictive d'une ligne de production automobile.</p>
-                            <div class="mission-gallery">
-                                <img src="https://via.placeholder.com/300x200?text=Photo+1.1" alt="Détail 1" class="mission-gallery-image">
-                                <img src="https://via.placeholder.com/300x200?text=Photo+1.2" alt="Détail 2" class="mission-gallery-image">
+                            <p>Usinage de pièce non IPS (important pour la sureté) en atelier</p>
+                            
+                            <h5>Activités permanentes :</h5>
+                            <p>Répondre aux demandes de fabrication ou modification de pièce en tournage et fraisage</p>
+                            
+                            <h5>Activités ponctuelles :</h5>
+                            <p>Rodage de robinet clapet sur site (salle des machines)</p>
+                            
+                            <h5>Contraintes :</h5>
+                            <p>Normes, réglementation, lieu hautement sensible</p>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>📚 Compétences développées :</h4>
+                            <div class="constraints-grid">
+                                <div class="constraint-item">
+                                    <h5>Savoirs</h5>
+                                    <p>Techniques d'usinage, lecture de plans, métrologie</p>
+                                </div>
+                                <div class="constraint-item">
+                                    <h5>Savoir-faire</h5>
+                                    <p>Utilisation des machines-outils, contrôle qualité, respect des procédures</p>
+                                </div>
+                                <div class="constraint-item">
+                                    <h5>Savoir-être</h5>
+                                    <p>Rigueur, précision, respect des consignes de sécurité</p>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="mission-section">
-                            <h4>🏆 Résultats clés :</h4>
-                            <ul>
-                                <li>+25% d'efficacité de production</li>
-                                <li>-30% de temps d'arrêt</li>
-                                <li>Formation de 15 opérateurs</li>
-                            </ul>
+                            <h4>📊 Bilan personnel :</h4>
+                            <div class="constraints-grid">
+                                <div class="constraint-item">
+                                    <h5>Points positifs</h5>
+                                    <p>Acquisition d'une expérience concrète en environnement industriel sensible</p>
+                                </div>
+                                <div class="constraint-item">
+                                    <h5>Points d'amélioration</h5>
+                                    <p>Gestion du temps sur les opérations complexes</p>
+                                </div>
+                            </div>
                         </div>
-                        
+
+                        <!-- Section Galerie -->
                         <div class="mission-section">
-                            <h4>🛠️ Compétences techniques :</h4>
-                            <div class="mission-skills">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">IoT</span>
-                                <span class="skill-tag">Maintenance prédictive</span>
-                                <span class="skill-tag">Analyse de données</span>
+                            <h4>🖼️ Galerie</h4>
+                            <div class="mission-images-container">
+                                <div class="mission-image-wrapper">
+                                    <img src="assets/images/fiche-mission1_2.jpg" alt="Atelier d'usinage" class="mission-image">
+                                </div>
+                                <div class="mission-image-wrapper">
+                                    <img src="assets/images/fiche-mission1_3.jpg" alt="Pièce usinée" class="mission-image">
+                                </div>
+                                <div class="mission-image-wrapper">
+                                    <img src="assets/images/fiche-mission1_4.jpg" alt="Machine d'usinage" class="mission-image">
+                                </div>
+                                <div class="mission-image-wrapper">
+                                    <img src="assets/images/fiche-mission1_5.jpg" alt="Zone de travail" class="mission-image">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -519,5 +556,53 @@
 
 
     <script src="script.js"></script>
+    <script>
+        // Galerie d'images modale
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+            `;
+            document.body.appendChild(modal);
+
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.close');
+            const galleryImages = document.querySelectorAll('.mission-gallery-image');
+
+            // Ouvrir la modale au clic sur une image
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Fermer la modale
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            // Fermer en cliquant en dehors de l'image
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            // Fermer avec la touche Échap
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
