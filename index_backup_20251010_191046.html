@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel GUITTON - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="https://artsetmetiers.fr/fr" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/logo-trans-322x84.png" alt="Arts et Métiers">
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#apropos" class="nav-link">À propos</a></li>
+                    <li><a href="#competences" class="nav-link">Compétences</a></li>
+                    <li><a href="#projets" class="nav-link">Fiches Missions</a></li>
+                    <li><a href="#valorisation" class="nav-link">Expériences</a></li>
+                    <li><a href="plaquettes.html" class="nav-link" style="color: white; font-weight: 600;">Plaquette Formation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Menu déroulant pour mobile -->
+            <div class="mobile-nav">
+                <div class="mobile-select-wrapper">
+                    <select id="mobile-menu" class="mobile-select">
+                        <option value="">Menu</option>
+                        <option value="#apropos">À propos</option>
+                        <option value="#competences">Compétences</option>
+                        <option value="#projets">Fiches Missions</option>
+                        <option value="#valorisation">Expériences</option>
+                        <option value="plaquettes.html">Plaquette Formation</option>
+                        <option value="#contact">Contact</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="container">
+            <h1 class="fade-in">Samuel GUITTON</h1>
+            <p class="tagline fade-in">Etudiant Bachelor Technologie - 2ème année
+                Ecole National Supérieur des Arts & Métiers</p>
+            <div class="cta-buttons">
+                <a href="CV Samuel GUITTON 2025-26.pdf" class="btn btn-primary" download="CV Samuel GUITTON 2025-26.pdf">
+                    <i class="fas fa-download"></i> Télécharger mon CV
+                </a>
+                <a href="#projets" class="btn btn-outline">Voir mes projets</a>
+                <a href="#contact" class="btn btn-outline" style="background-color: white; color: #f8aa00; border-color: #f8aa00;">
+                    <i class="fas fa-envelope" style="color: #f8aa00;"></i> <span style="color: #f8aa00;">Me contacter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text" style="text-align: justify;">
+                    <p class="intro-text" style="font-weight: normal; text-align: justify; text-justify: inter-word;">Bonjour, je m'appelle Samuel Guitton et je suis actuellement en deuxième année de Bachelor de Technologie aux Arts et Métiers, sur le campus de Bordeaux-Talence.</p>
+                    
+                    <div class="about-details">
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        Au cours de ma formation, j'ai acquis des compétences en modélisation de pièces mécaniques, fabrication, intégration de capteurs et de systèmes électroniques, ainsi qu'en câblage et programmation.</p>
+                        
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        J'ai pu mettre ces compétences en pratique à travers différents projets scolaires, réalisés aussi bien en Bachelor de Technologie qu'au lycée. Parmi ces projets, j'ai notamment participé à la conception et à la réalisation d'un robot multipattes suiveur de ligne, et géré le développement d'une voiture radiocommandée de compétition. Ces expériences m'ont permis de comprendre l'importance du prototypage et surtout d'une CAO détaillée et aboutie.</p>
+                        
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        J'ai ensuite pu renforcer mes compétences pratiques lors d'un stage de quatre semaines à EDF. Assister et participer à des missions de maintenance, de rodage de robinets et clapets, ainsi que d'usinage, m'a permis d'approfondir les notions acquises lors des travaux pratiques au sein de ma formation.</p>
+                        
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        Enfin, en dehors de mes études, je suis passionné de VTT, que je pratique en compétition depuis douze ans. Mon expérience de deux ans dans un team national de XCO m'a enseigné l'esprit d'équipe et la rigueur. Aujourd'hui, je prépare et participe aux Coupes de France de VTT enduro, une discipline qui demande régularité, dépassement de soi et engagement. Je m'intéresse également à l'impression 3D et à l'usinage conventionnel, des activités que je pratique en parallèle de mes études et qui me permettent de compléter mes connaissances techniques.</p>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Formation</h4>
+                                <p>Bachelor de Technologie</p>
+                                <p class="text-muted">Arts et Métiers de Bordeaux</p>
+                                <p class="text-muted">2024 - Aujourd'hui</p>
+                                <p>Bac STI2D - Spé. ITEC</p>
+                                <p class="text-muted">Lycée Alfred Kastler</p>
+                                <p class="text-muted">2021 - 2024</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Expériences</h4>
+                                <p>Stage exécutant - EDF CNPE du Blayais</p>
+                                <p class="text-muted">2025</p>
+                                <p>Stage de 3ème - ADEFI</p>
+                                <p class="text-muted">2019</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h4>Centres d'intérêt</h4>
+                                <p>VTT Compétition</p>
+                                <p>Impression 3D</p>
+                                <p>Usinage</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Mes Compétences Techniques</h2>
+            <p class="section-subtitle">Un aperçu de mes compétences en fabrication, conception et programmation</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Fabrication</h3>
+                    <ul class="skill-list">
+                        <li><strong>Soudage</strong> (MIG/MAG, à l'arc)</li>
+                        <li><strong>Usinage</strong> (tournage, fraisage conventionnel)</li>
+                        <li><strong>Pliage de tôles</strong></li>
+                        <li><strong>Impression 3D</strong> (FDM, résine)</li>
+                        <li>Lecture de plans techniques</li>
+                        <li>Métrologie</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Conception (CAO)</h3>
+                    <ul class="skill-list">
+                        <li><strong>CATIA V5</strong> (volumique, surfacique, mise en plan, assemblages)</li>
+                        <li><strong>SolidWorks</strong> (volumique, assemblages, mise en plan)</li>
+                        <li>Scannage 3D et rétro-conception</li>
+                        <li>Rendu réaliste</li>
+                        <li>Simulation mécanique</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Programmation</h3>
+                    <ul class="skill-list">
+                        <li><strong>Python</strong> (bases)</li>
+                        <li><strong>Arduino</strong> (programmation de microcontrôleurs)</li>
+                        <li>Automatisation de tâches</li>
+                        <li>Acquisition de données</li>
+                        <li>Conception de circuits électroniques simples</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="projects">
+        <div class="container">
+            <h2 class="section-title">Fiches Missions</h2>
+            <p class="section-subtitle">Découvrez mes missions et réalisations</p>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Développement Web</button>
+                <button class="filter-btn" data-filter="ia">IA & Data</button>
+                <button class="filter-btn" data-filter="ingenierie">Ingénierie</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Fiche de Mission 1 (2024) -->
+                <div class="mission-card" data-filter="ingenierie" data-year="2024">
+                    <div class="mission-image-container">
+                        <img src="assets/images/fiche-mission1_1.jpg" alt="Mission 1" class="mission-main-image">
+                    </div>
+                    <div class="mission-header">
+                        <h3>FICHE DE MISSION N°1</h3>
+                        <h2>Développement d'un système de surveillance intelligent</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2024</span>
+                            <span class="mission-duration">6 mois</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-content">
+                        <div class="mission-section">
+                            <h4>📌 Poste :</h4>
+                            <p>Assistant ingénieur en automatisation industrielle</p>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>🎯 Mission :</h4>
+                            <p>Concevoir et mettre en œuvre un système de surveillance temps réel pour optimiser la maintenance prédictive d'une ligne de production automobile.</p>
+                            <div class="mission-gallery">
+                                <img src="https://via.placeholder.com/300x200?text=Photo+1.1" alt="Détail 1" class="mission-gallery-image">
+                                <img src="https://via.placeholder.com/300x200?text=Photo+1.2" alt="Détail 2" class="mission-gallery-image">
+                            </div>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>🏆 Résultats clés :</h4>
+                            <ul>
+                                <li>+25% d'efficacité de production</li>
+                                <li>-30% de temps d'arrêt</li>
+                                <li>Formation de 15 opérateurs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>🛠️ Compétences techniques :</h4>
+                            <div class="mission-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">IoT</span>
+                                <span class="skill-tag">Maintenance prédictive</span>
+                                <span class="skill-tag">Analyse de données</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fiche de Mission 2 (2023) -->
+                <div class="mission-card" data-filter="ia" data-year="2023">
+                    <div class="mission-image-container">
+                        <img src="assets/images/fiche-mission2_1 (2).png" alt="IA Prédictive" class="mission-main-image">
+                    </div>
+                    <div class="mission-header">
+                        <h3>FICHE DE MISSION N°2</h3>
+                        <h2>IA pour l'analyse prédictive</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2023</span>
+                            <span class="mission-duration">8 mois</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-content">
+                        <div class="mission-section">
+                            <h4>📌 Poste :</h4>
+                            <p>Data Scientist Junior</p>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>🎯 Mission :</h4>
+                            <p>Développement et déploiement d'un modèle de machine learning pour prédire les tendances du marché et optimiser les décisions stratégiques.</p>
+                            
+                            <div class="mission-gallery">
+                                <img src="https://via.placeholder.com/300x200?text=Analyse+Données" alt="Analyse Données" class="mission-gallery-image">
+                                <img src="https://via.placeholder.com/300x200?text=Modèle+IA" alt="Modèle IA" class="mission-gallery-image">
+                            </div>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>🏆 Résultats clés :</h4>
+                            <ul>
+                                <li>Précision du modèle : 89%</li>
+                                <li>Réduction des coûts de 20%</li>
+                                <li>Automatisation complète du processus</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>🛠️ Compétences techniques :</h4>
+                            <div class="mission-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Traitement des données</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fiche de Mission 3 (2022) -->
+                <div class="mission-card" data-filter="web" data-year="2022">
+                    <div class="mission-image-container">
+                        <img src="assets/images/fiche-mission3_1.png" alt="Mission 3" class="mission-main-image">
+                    </div>
+                    <div class="mission-header">
+                        <h3>FICHE DE MISSION N°3</h3>
+                        <h2>Refonte du site web d'entreprise avec architecture microservices</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2022</span>
+                            <span class="mission-duration">5 mois</span>
+                        </div>
+                    </div>
+                    <div class="mission-content">
+                        <div class="mission-section">
+                            <h4>📌 Poste :</h4>
+                            <p>Développeur Full Stack</p>
+                        </div>
+                        <div class="mission-section">
+                            <h4>🎯 Mission :</h4>
+                            <p>Refonte complète du site web corporate avec une architecture microservices moderne.</p>
+                            <img src="https://via.placeholder.com/600x300?text=Site+web+entreprise" alt="Site web entreprise" class="mission-image">
+                        </div>
+                        <div class="mission-grid">
+                            <div class="mission-grid-item">
+                                <h4>⚙️ Technologies :</h4>
+                                <ul>
+                                    <li>React.js / Node.js</li>
+                                    <li>Docker / Kubernetes</li>
+                                    <li>API REST</li>
+                                </ul>
+                            </div>
+                            <div class="mission-grid-item">
+                                <h4>🏆 Résultats :</h4>
+                                <ul>
+                                    <li>+40% de performance</li>
+                                    <li>Meilleure maintenabilité</li>
+                                    <li>Équipe de 5 développeurs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fiche de Mission 4 (2021) -->
+                <div class="mission-card" data-filter="ingenierie" data-year="2021" style="display: none;">
+                    <div class="mission-header">
+                        <h3>FICHE DE MISSION N°4</h3>
+                        <h2>Automatisation des processus industriels</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2021</span>
+                            <span class="mission-duration">10 mois</span>
+                        </div>
+                    </div>
+                    <div class="mission-content">
+                        <div class="mission-section">
+                            <h4>📌 Poste :</h4>
+                            <p>Ingénieur en automatisation</p>
+                        </div>
+                        <div class="mission-section">
+                            <h4>🎯 Mission :</h4>
+                            <p>Conception et mise en œuvre de solutions d'automatisation pour une usine de fabrication.</p>
+                            <img src="https://via.placeholder.com/600x300?text=Automatisation+industrielle" alt="Automatisation industrielle" class="mission-image">
+                        </div>
+                        <div class="mission-section">
+                            <h4>🛠️ Réalisations :</h4>
+                            <ul>
+                                <li>Réduction de 35% du temps de cycle</li>
+                                <li>Formation de 20 opérateurs</li>
+                                <li>Mise en place de tableaux de bord temps réel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fiche de Mission 5 (2020) -->
+                <div class="mission-card" data-filter="ia" data-year="2020" style="display: none;">
+                    <div class="mission-header">
+                        <h3>FICHE DE MISSION N°5</h3>
+                        <h2>Développement d'une application mobile de réalité augmentée</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2020</span>
+                            <span class="mission-duration">7 mois</span>
+                        </div>
+                    </div>
+                    <div class="mission-content">
+                        <div class="mission-section">
+                            <h4>📌 Poste :</h4>
+                            <p>Développeur Mobile AR/VR</p>
+                        </div>
+                        <div class="mission-section">
+                            <h4>🎯 Mission :</h4>
+                            <p>Création d'une application de réalité augmentée pour la visualisation de produits en 3D.</p>
+                            <img src="https://via.placeholder.com/600x300?text=Réalité+Augmentée" alt="Réalité Augmentée" class="mission-image">
+                        </div>
+                        <div class="mission-grid">
+                            <div class="mission-grid-item">
+                                <h4>⚙️ Technologies :</h4>
+                                <ul>
+                                    <li>Unity 3D</li>
+                                    <li>ARKit/ARCore</li>
+                                    <li>Blender</li>
+                                </ul>
+                            </div>
+                            <div class="mission-grid-item">
+                                <h4>🏆 Résultats :</h4>
+                                <ul>
+                                    <li>+50k téléchargements</li>
+                                    <li>Note de 4.7/5 sur les stores</li>
+                                    <li>Équipe de 4 personnes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <button id="showAllMissions" class="btn btn-outline">Voir toutes les missions</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="valorisation" class="valorisation">
+        <div class="container">
+            <h2 class="section-title">Tableau de Valorisation d'Expériences</h2>
+            <p class="section-subtitle">Analyse de mes compétences et apprentissages</p>
+            
+            <div class="table-responsive">
+                <table class="valorisation-table">
+                    <thead>
+                        <tr>
+                            <th>Activités</th>
+                            <th>SAVOIRS</th>
+                            <th>SAVOIR-FAIRE</th>
+                            <th>SAVOIR-ÊTRE</th>
+                            <th>Exemple de situations précises</th>
+                            <th>Lien possible avec le stage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Activités">Réalisation de pièces techniques</td>
+                            <td data-label="SAVOIRS">Connaissances en procédures d'usinage</td>
+                            <td data-label="SAVOIR-FAIRE">Utilisation de machines-outils</td>
+                            <td data-label="SAVOIR-ÊTRE">Précision, rigueur</td>
+                            <td data-label="Exemple de situations précises">Usinage d'une pièce sur fraiseuse à commande numérique</td>
+                            <td data-label="Lien possible avec le stage">Application des compétences techniques acquises</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">Maintenance préventive</td>
+                            <td data-label="SAVOIRS">Notions de maintenance industrielle</td>
+                            <td data-label="SAVOIR-FAIRE">Diagnostic, planification</td>
+                            <td data-label="SAVOIR-ÊTRE">Organisation, anticipation</td>
+                            <td data-label="Exemple de situations précises">Établissement d'un planning de maintenance</td>
+                            <td data-label="Lien possible avec le stage">Mise en pratique en environnement industriel</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">Travail en équipe</td>
+                            <td data-label="SAVOIRS">Méthodes de communication</td>
+                            <td data-label="SAVOIR-FAIRE">Coordination, partage d'informations</td>
+                            <td data-label="SAVOIR-ÊTRE">Écoute, collaboration</td>
+                            <td data-label="Exemple de situations précises">Participation à des réunions d'équipe</td>
+                            <td data-label="Lien possible avec le stage">Intégration dans une équipe de maintenance</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">CAO avec CATIA V5</td>
+                            <td data-label="SAVOIRS">Conception assistée par ordinateur</td>
+                            <td data-label="SAVOIR-FAIRE">Modélisation 3D, dessin technique</td>
+                            <td data-label="SAVOIR-ÊTRE">Précision, créativité</td>
+                            <td data-label="Exemple de situations précises">Création de modèles 3D de pièces</td>
+                            <td data-label="Lien possible avec le stage">Application en phase de conception</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">Gestion de projet</td>
+                            <td data-label="SAVOIRS">Méthodes de gestion de projet</td>
+                            <td data-label="SAVOIR-FAIRE">Planification, suivi</td>
+                            <td data-label="SAVOIR-ÊTRE">Organisation, leadership</td>
+                            <td data-label="Exemple de situations précises">Suivi d'un projet de A à Z</td>
+                            <td data-label="Lien possible avec le stage">Mise en application des méthodologies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <p class="section-subtitle">N'hésitez pas à me contacter pour toute opportunité ou collaboration</p>
+            
+            <div class="contact-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="contact-info">
+                    <div class="contact-item" style="margin-bottom: 30px;">
+                        <div class="contact-icon" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-color);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:samuel.guitton@ensam.eu">samuel.guitton@ensam.eu</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" style="margin-bottom: 30px;">
+                        <div class="contact-icon" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-color);">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <a href="tel:+33677342937" style="font-size: 1.2rem;">06 77 34 29 37</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links" style="margin-top: 40px;">
+                        <h3 style="margin-bottom: 20px;">Réseaux sociaux</h3>
+                        <div style="display: flex; justify-content: center; gap: 20px;">
+                            <a href="#" class="social-link" target="_blank" title="LinkedIn" style="font-size: 1.5rem; color: var(--secondary-color); transition: color 0.3s ease;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/samuel_gn33" class="social-link" target="_blank" title="Instagram" style="font-size: 1.5rem; color: var(--secondary-color); transition: color 0.3s ease;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
