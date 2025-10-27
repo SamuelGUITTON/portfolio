@@ -1,0 +1,62 @@
+/* Styles pour les missions */
+.hidden-mission {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 5000px;
+        margin: 40px 0;
+        padding: 0;
+    }
+}
+
+@keyframes fadeOut {
+    to { 
+        opacity: 0;
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.mission-card {
+    margin-bottom: 60px;
+    transition: all 0.3s ease-out;
+}
+
+#showMoreContainer {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.btn-outline {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #f8aa00;
+    color: #f8aa00;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #f8aa00;
+    color: white;
+}

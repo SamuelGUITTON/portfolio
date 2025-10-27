@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel GUITTON - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/missions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="https://artsetmetiers.fr/fr" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/logo-trans-322x84.png" alt="Arts et Métiers">
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#apropos" class="nav-link">À propos</a></li>
+                    <li><a href="#competences" class="nav-link">Compétences</a></li>
+                    <li><a href="#projets" class="nav-link">Fiches Missions</a></li>
+                    <li><a href="#valorisation" class="nav-link">Expériences</a></li>
+                    <li><a href="plaquettes.html" class="nav-link" style="color: white; font-weight: 600;">Plaquette Formation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Menu déroulant pour mobile -->
+            <div class="mobile-nav">
+                <div class="mobile-select-wrapper">
+                    <select id="mobile-menu" class="mobile-select">
+                        <option value="">Menu</option>
+                        <option value="#apropos">À propos</option>
+                        <option value="#competences">Compétences</option>
+                        <option value="#projets">Fiches Missions</option>
+                        <option value="#valorisation">Expériences</option>
+                        <option value="plaquettes.html">Plaquette Formation</option>
+                        <option value="#contact">Contact</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Le reste de votre contenu HTML reste inchangé -->
+    
+    <!-- Ajoutez cette ligne juste avant la fermeture de la balise body -->
+    <script src="js/missions.js" defer></script>
+</body>
+</html>
