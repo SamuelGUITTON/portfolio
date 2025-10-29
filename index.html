@@ -23,25 +23,71 @@
         }
         
         /* Style des listes à puces dans les fiches missions */
+        .mission-card {
+            transition: all 0.3s ease;
+        }
+        
         .mission-content ul {
-            list-style: none;
+            list-style-type: none;
             padding-left: 0;
             margin: 10px 0;
         }
+        
         .mission-content li {
             margin-bottom: 5px;
             color: #555;
             line-height: 1.5;
             position: relative;
-            padding-left: 20px;
+            padding-left: 25px;
+            transition: all 0.3s ease;
         }
+        
         .mission-content li:before {
+            content: '';
+            display: none;  /* Désactive le point généré par CSS */
+        }
+        
+        /* Style pour les listes dans toutes les fiches missions */
+        .mission-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .mission-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+        
+        /* Points bleus par défaut */
+        .mission-card li:before {
             content: '•';
-            color: #f8aa00;
-            font-size: 20px;
+            color: #4a6fa5;
+            font-size: 16px;
             position: absolute;
             left: 0;
-            top: -2px;
+            top: 0;
+            transition: all 0.3s ease;
+            font-weight: normal;
+        }
+        
+        /* Style au survol d'une fiche mission */
+        .mission-card:hover li:before {
+            color: #f8aa00;
+            font-size: 24px;
+            transform: translateY(-2px);
+            font-weight: bold;
+        }
+        
+        .mission-card:hover li {
+            color: #333;
+        }
+        
+        .mission-card:hover .mission-content li {
+            color: #333;
         }
     </style>
 </head>
@@ -424,7 +470,7 @@
                         <h3>FICHE DE MISSION N°2</h3>
                         <h2>Projet Robot</h2>
                         <div class="mission-meta">
-                            <span class="mission-year">2024-2025</span>
+                            <span class="mission-year">2024-2025 / 1 an</span>
                             <span class="mission-duration">1 an</span>
                         </div>
                     </div>
@@ -477,10 +523,6 @@
                                 </ul>
                             </div>
                             
-                            <div class="activity-section">
-                                <h5>Faits marquants :</h5>
-                                <p>À compléter avec les réalisations notables du projet</p>
-                            </div>
                         </div>
                         
                         <div class="mission-section">
@@ -488,22 +530,23 @@
                             <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
                                 <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                                     <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoirs :</h5>
-                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">Compétence en CAO, Arduino et fabrication</p>
                                 </div>
                                 <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                                     <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-faire :</h5>
-                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">Conception du robot, utilisation de machines de pliage et de découpe, réalisation de circuit électrique et électronique</p>
                                 </div>
                                 <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                                     <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-être :</h5>
-                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">Esprit d'équipe, rigueur et persévérance</p>
                                 </div>
                             </div>
                             
                             <div class="activity-section" style="margin-top: 25px;">
                                 <h5>Résultats / apports personnels :</h5>
-                                <p><strong>Point positif :</strong> À compléter</p>
-                                <p><strong>Point négatif :</strong> À compléter</p>
+                                <p>Réalisation complète d'un projet robotique de A à Z, de la conception à la fabrication</p>
+                                <p style="margin-top: 15px;"><strong>Point positif :</strong> Faire un projet à longue durée avec des moyens conséquents</p>
+                                <p><strong>Point négatif :</strong> Erreur de dimensionnement du circuit électrique et de certains servos ce qui nous a empêché de finir la course</p>
                             </div>
                         </div>
                     </div>
@@ -520,7 +563,7 @@
                         <h3>FICHE DE MISSION N°3</h3>
                         <h2>Voiture RC de compétition</h2>
                         <div class="mission-meta">
-                            <span class="mission-year">2023-2024</span>
+                            <span class="mission-year">2023-2024 / 1 an</span>
                             <span class="mission-duration">1 an</span>
                         </div>
                     </div>
@@ -547,16 +590,23 @@
                         </div>
                         
                         <div class="activity-section">
+                            <h5>Activités ponctuelles :</h5>
+                            <ul>
+                                <li>Prototypage et test</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-section">
                             <h5>Moyens mis en œuvre :</h5>
-                            <p><strong>Matériels :</strong> Imprimante 3D FDM, découpe laser, composants</p>
-                            <p><strong>Organisationnel :</strong> Plateformes collaboratives (Teams, Notion)</p>
+                            <p><strong>Matériels :</strong> Imprimante 3D FDM et résine, découpe laser</p>
+                            <p><strong>Financier :</strong> Coût de fabrication pris en charge par l'établissement + prêt des composants + apports personnels pour composants spécifiques</p>
                         </div>
                         
                         <div class="activity-section">
                             <h5>Contraintes :</h5>
                             <ul>
                                 <li>Temps limité</li>
-                                <li>Respect du règlement de la compétition</li>
+                                <li>Intégration des composants déjà existants</li>
                             </ul>
                         </div>
                         
