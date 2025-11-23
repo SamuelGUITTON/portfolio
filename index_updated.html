@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel GUITTON - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <style>
+        /* Style personnalisé pour la lightbox */
+        .lb-container .lb-image {
+            border: 4px solid white;
+            border-radius: 4px;
+        }
+        .lb-data .lb-caption {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #fff;
+        }
+        .lb-data .lb-close {
+            margin-top: 10px;
+        }
+        
+        /* Style des listes à puces dans les fiches missions */
+        .mission-card {
+            transition: all 0.3s ease;
+        }
+        
+        .mission-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 10px 0;
+        }
+        
+        .mission-content li {
+            margin-bottom: 5px;
+            color: #555;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .mission-content li:before {
+            content: '';
+            display: none;  /* Désactive le point généré par CSS */
+        }
+        
+        /* Style pour les listes dans toutes les fiches missions */
+        .mission-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .mission-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+        
+        /* Points bleus par défaut */
+        .mission-card li:before {
+            content: '•';
+            color: #4a6fa5;
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.3s ease;
+            font-weight: normal;
+        }
+        
+        /* Style au survol d'une fiche mission */
+        .mission-card:hover li:before {
+            color: #f8aa00;
+            font-size: 24px;
+            transform: translateY(-2px);
+            font-weight: bold;
+        }
+        
+        .mission-card:hover li {
+            color: #333;
+        }
+        
+        .mission-card:hover .mission-content li {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="https://artsetmetiers.fr/fr" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/logo-trans-322x84.png" alt="Arts et Métiers">
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#apropos" class="nav-link">À propos</a></li>
+                    <li><a href="#competences" class="nav-link">Compétences</a></li>
+                    <li><a href="#projets" class="nav-link">Fiches Missions</a></li>
+                    <li><a href="#valorisation" class="nav-link">Expériences</a></li>
+                    <li><a href="plaquettes.html" class="nav-link" style="color: white; font-weight: 600;">Plaquette Formation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Menu déroulant pour mobile -->
+            <div class="mobile-nav">
+                <div class="mobile-select-wrapper">
+                    <select id="mobile-menu" class="mobile-select">
+                        <option value="">Menu</option>
+                        <option value="#apropos">À propos</option>
+                        <option value="#competences">Compétences</option>
+                        <option value="#projets">Fiches Missions</option>
+                        <option value="#valorisation">Expériences</option>
+                        <option value="plaquettes.html">Plaquette Formation</option>
+                        <option value="#contact">Contact</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="container">
+            <h1 class="fade-in">Samuel GUITTON</h1>
+            <p class="tagline fade-in">Etudiant Bachelor Technologie - 2ème année
+                Ecole National Supérieur des Arts & Métiers</p>
+            <div class="cta-buttons">
+                <a href="CV Samuel GUITTON 2025-26.pdf" class="btn btn-primary" download="CV Samuel GUITTON 2025-26.pdf">
+                    <i class="fas fa-download"></i> Télécharger mon CV
+                </a>
+                <a href="#projets" class="btn btn-outline">Voir mes missions</a>
+                <a href="#contact" class="btn btn-outline" style="background-color: white; color: #f8aa00; border-color: #f8aa00;">
+                    <i class="fas fa-envelope" style="color: #f8aa00;"></i> <span style="color: #f8aa00;">Me contacter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text" style="text-align: justify;">
+                    <p class="intro-text" style="font-weight: normal; text-align: justify; text-justify: inter-word;">Bonjour, je m'appelle Samuel Guitton et je suis actuellement en <strong>deuxième année de Bachelor de Technologie aux Arts et Métiers</strong>, sur le campus de <strong>Bordeaux-Talence</strong>.</p>
+                    
+                    <div class="about-details">
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        Au cours de ma formation, j'ai acquis des compétences en <strong>modélisation de pièces mécaniques</strong>, <strong>fabrication</strong>, <strong>intégration de capteurs et de systèmes électroniques</strong>, ainsi qu'en <strong>câblage et programmation</strong>.</p>
+                        
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        J'ai pu mettre ces compétences en pratique à travers différents <strong>projets scolaires</strong>, réalisés aussi bien en Bachelor de Technologie qu'au lycée. Parmi ces projets, j'ai notamment participé à la conception et à la réalisation d'<strong>un robot multipattes suiveur de ligne</strong>, et géré le développement d'une <strong>voiture radiocommandée de compétition</strong>. Ces expériences m'ont permis de comprendre l'importance du <strong>prototypage</strong> et surtout d'une <strong>CAO détaillée et aboutie</strong>.</p>
+                        
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        J'ai ensuite pu renforcer mes compétences pratiques lors d'un <strong>stage de quatre semaines à EDF</strong>. Assister et participer à des missions de <strong>maintenance</strong>, de <strong>rodage de robinets et clapets</strong>, ainsi que d'<strong>usinage</strong>, m'a permis d'approfondir les notions acquises lors des travaux pratiques au sein de ma formation.</p>
+                        
+                        <p style="text-align: justify; text-justify: inter-word;">
+                        Enfin, en dehors de mes études, je suis passionné de <strong>VTT</strong>, que je pratique en compétition depuis <strong>douze ans</strong>. Mon expérience de <strong>deux ans dans un team national de XCO</strong> m'a enseigné l'<strong>esprit d'équipe</strong> et la <strong>rigueur</strong>. Aujourd'hui, je prépare et participe aux <strong>Coupes de France de VTT enduro</strong>, une discipline qui demande <strong>régularité</strong>, <strong>dépassement de soi</strong> et <strong>engagement</strong>. Je m'intéresse également à l'<strong>impression 3D</strong> et à l'<strong>usinage conventionnel</strong>, des activités que je pratique en parallèle de mes études et qui me permettent de compléter mes connaissances techniques.</p>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Formation</h4>
+                            <div class="info-content">
+                                <div class="info-item">
+                                    <h5>Bachelor de Technologie</h5>
+                                    <p class="text-muted">Arts et Métiers de Bordeaux</p>
+                                    <p class="text-muted">2024 - Aujourd'hui</p>
+                                </div>
+                                <div class="info-item">
+                                    <h5>Bac STI2D - Spé. ITEC</h5>
+                                    <p class="text-muted">Lycée Alfred Kastler</p>
+                                    <p class="text-muted">2021 - 2024</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h4>Expériences</h4>
+                            <div class="info-content">
+                                <div class="info-item">
+                                    <h5>Stage exécutant</h5>
+                                    <p class="text-muted">EDF CNPE du Blayais</p>
+                                    <p class="text-muted">2025</p>
+                                </div>
+                                <div class="info-item">
+                                    <h5>Stage de 3ème</h5>
+                                    <p class="text-muted">ADEFI</p>
+                                    <p class="text-muted">2019</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Centres d'intérêt</h4>
+                            <div class="info-content">
+                                <div class="info-item">
+                                    <h5>VTT Compétition</h5>
+                                    <p class="text-muted">Coupe de France Enduro</p>
+                                </div>
+                                <div class="info-item">
+                                    <h5>Impression 3D</h5>
+                                </div>
+                                <div class="info-item">
+                                    <h5>Usinage</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .info-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                            gap: 25px;
+                            margin-top: 30px;
+                        }
+                        
+                        .info-card {
+                            background: white;
+                            border-radius: 12px;
+                            padding: 25px;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        }
+                        
+                        .info-card:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                        }
+                        
+                        .info-icon {
+                            width: 50px;
+                            height: 50px;
+                            background: #f8f0e0;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 15px;
+                        }
+                        
+                        .info-icon i {
+                            font-size: 24px;
+                            color: #f8aa00;
+                        }
+                        
+                        .info-card h4 {
+                            color: #333;
+                            margin-bottom: 20px;
+                            font-size: 20px;
+                            position: relative;
+                            padding-bottom: 10px;
+                        }
+                        
+                        .info-card h4::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 50px;
+                            height: 3px;
+                            background: #f8aa00;
+                            border-radius: 3px;
+                        }
+                        
+                        .info-content {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                        }
+                        
+                        .info-item h5 {
+                            color: #444;
+                            margin-bottom: 5px;
+                            font-size: 16px;
+                        }
+                        
+                        .info-item .text-muted {
+                            color: #777 !important;
+                            font-size: 14px;
+                            line-height: 1.5;
+                            margin: 0;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .info-grid {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Mes Compétences Techniques</h2>
+            <p class="section-subtitle">Un aperçu de mes compétences en fabrication, conception et programmation</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Fabrication</h3>
+                    <ul class="skill-list">
+                        <li><strong>Soudage</strong> (MIG/MAG, à l'arc)</li>
+                        <li><strong>Usinage</strong> (tournage, fraisage conventionnel)</li>
+                        <li><strong>Pliage de tôles</strong></li>
+                        <li><strong>Impression 3D</strong> (FDM, résine)</li>
+                        <li>Lecture de plans techniques</li>
+                        <li>Métrologie</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Conception (CAO)</h3>
+                    <ul class="skill-list">
+                        <li><strong>CATIA V5</strong> (volumique, surfacique, mise en plan, assemblages)</li>
+                        <li><strong>SolidWorks</strong> (volumique, assemblages, mise en plan)</li>
+                        <li>Scannage 3D et rétro-conception</li>
+                        <li>Rendu réaliste</li>
+                        <li>Simulation mécanique</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Programmation</h3>
+                    <ul class="skill-list">
+                        <li><strong>Python</strong> (bases)</li>
+                        <li><strong>Arduino</strong> (programmation de microcontrôleurs)</li>
+                        <li>Automatisation de tâches</li>
+                        <li>Acquisition de données</li>
+                        <li>Conception de circuits électroniques simples</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="projects">
+        <div class="container">
+            <h2 class="section-title">Fiches Missions</h2>
+            <p class="section-subtitle">Découvrez mes missions et réalisations</p>
+            
+            <div class="projects-grid">
+                <!-- Fiche de Mission 1 (2024) -->
+                <div class="mission-card" data-filter="ingenierie" data-year="2025" style="margin-top: 0; padding-top: 0;">
+                    <div class="mission-image-container" style="overflow: hidden; border-radius: 12px 12px 0 0; margin: 0;">
+                        <img src="assets/images/fiche-mission1_1.jpg" alt="Atelier d'usinage" class="mission-main-image" style="width: 100%; height: 100%; object-fit: cover; display: block; margin: 0;">
+                    </div>
+                    <div class="mission-header" style="margin-top: 0;">
+                        <h3>FICHE DE MISSION N°1</h3>
+                        <h2>Stage exécutant en usinage</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2025</span>
+                            <span class="mission-duration">1 mois</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-content">
+                        <div class="mission-section">
+                            <h4>📌 Poste :</h4>
+                            <p>Usineur</p>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>🎯 Mission :</h4>
+                            <p>Usinage de pièce non IPS (important pour la sureté) en atelier</p>
+                            
+                            <div class="activity-section">
+                                <h5>Activités permanentes :</h5>
+                                <p>Répondre aux demandes de fabrication ou modification de pièce en tournage et fraisage</p>
+                                <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                    <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 200px;">
+                                        <img src="assets/images/fiche-mission1_4.jpg" alt="Zone de travail en usinage" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 200px;">
+                                        <img src="assets/images/fiche-mission1_5.jpg" alt="Pièces en cours d'usinage" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section">
+                                <h5>Activités ponctuelles :</h5>
+                                <p>Rodage de robinet clapet sur site (salle des machines)</p>
+                                <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                    <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 200px;">
+                                        <img src="assets/images/fiche-mission1_2.jpg" alt="Travail sur robinet clapet" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 200px;">
+                                        <img src="assets/images/fiche-mission1_6.jpg" alt="Salle des machines" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section">
+                                <h5>Moyens :</h5>
+                                <p><strong>Matériel :</strong> Machines d'usinage</p>
+                                <p><strong>Financiers :</strong> Enveloppe débloquée par l'entreprise, Chef de l'atelier gère le budget</p>
+                                <p><strong>Organisationnel :</strong> Réseau téléphone interne, mail et outil pack office</p>
+                            </div>
+                            
+                            <div class="activity-section">
+                                <h5>Contraintes :</h5>
+                                <ul>
+                                    <li>Respect des normes en vigueur</li>
+                                    <li>Réglementation stricte</li>
+                                    <li>Environnement hautement sensible</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>📚 Compétences développées :</h4>
+                            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoirs</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-faire</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-être</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">Ponctualité, curiosité, autonomie</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Résultats / apports personnels</h5>
+                                    <p style="margin: 0 0 10px 0; color: #555; line-height: 1.5;"><strong>Point positif :</strong> Apport de connaissance supplémentaire en usinage afin de compléter les notions acquises en cours ou lors de mon temps libre</p>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;"><strong>Point négatif :</strong> Stage un peu court pour une formation complète et me permettre d'exécuter un grand nombre de demandes d'usinages</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fiche de Mission 2 (2025) -->
+                <div class="mission-card" data-filter="ingenierie" data-year="2025" style="padding-top: 0;">
+                    <div class="mission-image-container" style="overflow: hidden; border-radius: 12px 12px 0 0; margin: 0;">
+                        <img src="assets/images/fiche de mission2_4.jpeg" alt="Projet de conception" class="mission-main-image" style="width: 100%; height: 100%; object-fit: cover; object-position: center 100%; display: block; margin: 0;">
+                    </div>
+                    <div class="mission-header" style="margin-top: 0;">
+                        <h3>FICHE DE MISSION N°2</h3>
+                        <h2>Projet Robot</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2024-2025 / 1 an</span>
+                            <span class="mission-duration">1 an</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-content">
+                        <div class="mission-section">
+                            <h4>🎯 Mission :</h4>
+                            <p>Conception mécanique et fabrication du prototype</p>
+                            
+                            <div class="activity-section">
+                                <h5>Activités permanentes :</h5>
+                                <p>Modélisation 3D</p>
+                                
+                                <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                    <div style="flex: 1; min-height: 200px; display: flex; justify-content: center; align-items: center; background: white; padding: 0;">
+                                        <img src="assets/images/fiche-mission2_1%20(2).png" alt="Modélisation 3D du robot" style="max-width: 100%; max-height: 250px; width: auto; height: auto; object-fit: contain;">
+                                    </div>
+                                    <div style="flex: 1; min-height: 200px; display: flex; align-items: center; justify-content: center; background: white;">
+                                        <img src="assets/images/fiche de mission2-3.png" alt="Vue éclatée des composants" style="max-width: 100%; max-height: 250px; width: auto; height: auto; object-fit: contain;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section">
+                                <h5>Activités ponctuelles :</h5>
+                                <p>Fabrication, programmation, câblage</p>
+                                
+                                <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                    <div style="flex: 1; border-radius: 8px; overflow: hidden; background: #f5f5f5; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                                        <img src="assets/images/fiche de mission2-2.png" alt="Fabrication des pièces" style="width: 100%; height: 200px; object-fit: cover; object-position: center 40%;">
+                                    </div>
+                                    <div style="flex: 1; border-radius: 8px; overflow: hidden; background: #f5f5f5; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                                        <img src="assets/images/fiche de mission2-5.jpg" alt="Câblage électronique" style="width: 100%; height: 200px; object-fit: cover; object-position: center;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section">
+                                <h5>Moyens mis en œuvre :</h5>
+                                <p><strong>Matériels :</strong> Imprimante 3D FDM et résine, découpe jet d'eau, plieuse</p>
+                                <p><strong>Financiers :</strong> Apport école</p>
+                                <p><strong>Organisationnel :</strong> Plateforme collaborative (Teams, Notion)</p>
+                            </div>
+                            
+                            <div class="activity-section">
+                                <h5>Contraintes :</h5>
+                                <ul>
+                                    <li>Temps limité</li>
+                                    <li>Respect du règlement de la compétition</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>📚 Compétences développées :</h4>
+                            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoirs :</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">Compétence en CAO, Arduino et fabrication</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-faire :</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">Conception du robot, utilisation de machines de pliage et de découpe, réalisation de circuit électrique et électronique</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-être :</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">Esprit d'équipe, rigueur et persévérance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section" style="margin-top: 25px;">
+                                <h5>Résultats / apports personnels :</h5>
+                                <p>Réalisation complète d'un projet robotique de A à Z, de la conception à la fabrication</p>
+                                <p style="margin-top: 15px;"><strong>Point positif :</strong> Faire un projet à longue durée avec des moyens conséquents</p>
+                                <p><strong>Point négatif :</strong> Erreur de dimensionnement du circuit électrique et de certains servos ce qui nous a empêché de finir la course</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Autres fiches missions... -->
+                
+                <!-- Fiche de Mission 3 (2024) -->
+                <div class="mission-card" data-filter="ingenierie" data-year="2024" style="margin-top: 40px; padding-top: 0;">
+                    <div class="mission-image-container" style="overflow: hidden; border-radius: 12px 12px 0 0; margin: 0; height: 200px;">
+                        <img src="assets/images/télécharger (6).jpeg" alt="Voiture RC de compétition" class="mission-main-image" style="width: 100%; height: 100%; object-fit: cover; display: block; margin: 0;">
+                    </div>
+                    <div class="mission-header" style="margin-top: 0; padding: 15px;">
+                        <h3>FICHE DE MISSION N°3</h3>
+                        <h2>Voiture RC de compétition</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2023-2024 / 1 an</span>
+                            <span class="mission-duration">1 an</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-content" style="padding: 0 15px 15px 15px;">
+                        <div class="mission-section">
+                            <h4>📌 Mission :</h4>
+                            <p>Conception du châssis</p>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Activités permanentes :</h5>
+                            <ul>
+                                <li>Modélisation 3D</li>
+                            </ul>
+                            <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 200px;">
+                                    <img src="assets/images/Capture d'écran 2024-05-19 110048.png" alt="Modélisation 3D du châssis" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex: 1; min-height: 200px; border-radius: 8px; overflow: hidden;">
+                                    <img src="assets/images/Capture d'écran 2024-05-18 161359.png" alt="Vue du châssis de la voiture RC" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Activités ponctuelles :</h5>
+                            <ul>
+                                <li>Prototypage et test</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Moyens mis en œuvre :</h5>
+                            <p><strong>Matériels :</strong> Imprimante 3D FDM et résine, découpe laser</p>
+                            <p><strong>Financier :</strong> Coût de fabrication pris en charge par l'établissement + prêt des composants + apports personnels pour composants spécifiques</p>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Contraintes :</h5>
+                            <ul>
+                                <li>Temps limité</li>
+                                <li>Intégration des composants déjà existants</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Faits marquants :</h5>
+                            <p>À compléter avec les réalisations notables du projet</p>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>📚 Compétences développées :</h4>
+                            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoirs</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-faire</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-être</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section" style="margin-top: 25px;">
+                                <h5>Résultats / apports personnels :</h5>
+                                <p><strong>Point positif :</strong> À compléter</p>
+                                <p><strong>Point négatif :</strong> À compléter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fiche de Mission 4 (2025) -->
+                <div class="mission-card" data-filter="ingenierie" data-year="2025" style="margin-top: 40px; padding-top: 0;">
+                    <div class="mission-image-container" style="overflow: hidden; border-radius: 12px 12px 0 0; margin: 0; height: 150px;">
+                        <img src="assets/images/Rendu_4.png" alt="Projet Brasero" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="mission-header" style="margin-top: 0; padding: 15px;">
+                        <h3>FICHE DE MISSION N°4</h3>
+                        <h2>Projet Vente de Brasero</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2025</span>
+                            <span class="mission-duration">150 jours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-content" style="padding: 0 15px 15px 15px;">
+                        <div class="mission-section">
+                            <h4>📌 Mission :</h4>
+                            <p>Concevoir un brasero à réaliser en tôlerie</p>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Activités permanentes :</h5>
+                            <ul>
+                                <li>CAO (Conception Assistée par Ordinateur)</li>
+                                <li>Mise en plan</li>
+                                <li>Création de fichiers de commande machine</li>
+                            </ul>
+                            <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: auto;">
+                                    <img src="assets/images/Rendu_9.png" alt="Modélisation 3D du brasero" style="width: 100%; height: auto; max-width: 100%; display: block;">
+                                </div>
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: auto;">
+                                    <img src="assets/images/Rendu_19.png" alt="Plans techniques du brasero" style="width: 100%; height: auto; max-width: 100%; display: block;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Activités ponctuelles :</h5>
+                            <p>Aide à la réalisation</p>
+                            <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 150px;">
+                                    <img src="assets/images/rendusdl1.png" alt="Atelier de fabrication 1" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 150px;">
+                                    <img src="assets/images/rendusdl2.png" alt="Atelier de fabrication 2" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Moyens mis en œuvre :</h5>
+                            <p><strong>Matériels :</strong> Découpe jet d'eau, plieuse, poste à souder</p>
+                            <p><strong>Financiers :</strong> Financement de départ fourni par l'école</p>
+                            <p><strong>Organisationnel :</strong> Plateformes collaboratives (Teams, Google Drive), système de messagerie instantanée</p>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Contraintes :</h5>
+                            <ul>
+                                <li>Temps limité</li>
+                                <li>Respect du règlement de la compétition</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Faits marquants :</h5>
+                            <p>À compléter avec les réalisations notables du projet</p>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>📚 Compétences développées :</h4>
+                            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoirs</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-faire</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-être</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section" style="margin-top: 25px;">
+                                <h5>Résultats / apports personnels :</h5>
+                                <p>Expertise de conception</p>
+                                <p><strong>Point positif :</strong> À compléter</p>
+                                <p><strong>Point négatif :</strong> À compléter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fiche de Mission 5 (2025) -->
+                <div class="mission-card" data-filter="ingenierie" data-year="2025" style="margin-top: 40px; padding-top: 0;">
+                    <div class="mission-image-container" style="overflow: hidden; border-radius: 12px 12px 0 0; margin: 0; height: 200px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; padding: 20px; color: #4a6fa5;">
+                            <i class="fas fa-cube" style="font-size: 48px; margin-bottom: 10px;"></i>
+                            <h3 style="margin: 10px 0; color: #4a6fa5;">Rétroconception 3D</h3>
+                            <p>Scan et impression 3D de pièces complexes</p>
+                        </div>
+                    </div>
+                    <div class="mission-header" style="margin-top: 0; padding: 15px;">
+                        <h3>FICHE DE MISSION N°5</h3>
+                        <h2>Rétroconception, scan 3D</h2>
+                        <div class="mission-meta">
+                            <span class="mission-year">2025</span>
+                            <span class="mission-duration">1 semaine</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-content" style="padding: 0 15px 15px 15px;">
+                        <div class="mission-section">
+                            <h4>📌 Mission :</h4>
+                            <p>Reproduction d'une pièce plastique spécifique et plus produite</p>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Activités permanentes :</h5>
+                            <p>Post-traitement STL</p>
+                            <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 150px;">
+                                    <img src="assets/images/Capture d’écran 2025-10-27 203642.png" alt="Scanner 3D en action" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 150px;">
+                                    <img src="assets/images/Capture d’écran 2025-10-27 203712.png" alt="Pièce imprimée" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Activités ponctuelles :</h5>
+                            <ul>
+                                <li>Scanne 3D</li>
+                                <li>Impression 3D</li>
+                            </ul>
+                            <div class="mission-images-container" style="display: flex; gap: 15px; margin: 15px 0;">
+                                <div style="flex: 1; border-radius: 8px; overflow: hidden; min-height: 150px; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/IMG_20250612_160811_919.jpg" alt="Post-traitement STL" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Moyens mis en œuvre :</h5>
+                            <p><strong>Matériels :</strong> Imprimante 3D résine, scanner 3D</p>
+                            <p><strong>Organisationnel :</strong> À compléter</p>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Contraintes :</h5>
+                            <ul>
+                                <li>Mécanique : résistance aux UV et conditions météorologiques complexes</li>
+                                <li>Informatique : gestion des types de fichiers spécifiques</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-section">
+                            <h5>Faits marquants :</h5>
+                            <p>À compléter avec les réalisations notables du projet</p>
+                        </div>
+                        
+                        <div class="mission-section">
+                            <h4>📚 Compétences développées :</h4>
+                            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoirs</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-faire</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                                    <h5 style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: 600;">Savoir-être</h5>
+                                    <p style="margin: 0; color: #555; line-height: 1.5;">À compléter</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section" style="margin-top: 25px;">
+                                <h5>Résultats / apports personnels :</h5>
+                                <p><strong>Point positif :</strong> À compléter</p>
+                                <p><strong>Point négatif :</strong> À compléter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div id="showMoreContainer" class="text-center" style="margin: 60px 0 40px 0;">
+                <button id="showAllMissions" class="btn btn-outline">Voir toutes les missions</button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .hidden-mission {
+            display: none;
+        }
+        
+        .show-mission {
+            display: block !important;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .mission-card {
+            margin-bottom: 60px;
+        }
+    </style>
+    
+
+    <section id="valorisation" class="valorisation">
+        <div class="container">
+            <h2 class="section-title">Tableau de Valorisation d'Expériences</h2>
+            <p class="section-subtitle">Synthèse de mes expériences professionnelles et compétences acquises</p>
+            
+            <div class="valorisation-table-container">
+                <table class="valorisation-table">
+                    <thead>
+                        <tr>
+                            <th>Activités</th>
+                            <th>SAVOIRS</th>
+                            <th>SAVOIR-FAIRE</th>
+                            <th>SAVOIR-ÊTRE</th>
+                            <th>Exemple de situations précises</th>
+                            <th>Lien possible avec le stage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Activités">Réalisation de pièces mécaniques</td>
+                            <td data-label="SAVOIRS">Connaissances en procédés d'usinage, lecture de plans, tolérances géométriques</td>
+                            <td data-label="SAVOIR-FAIRE">Utilisation de machines-outils, réglage de paramètres, contrôle dimensionnel</td>
+                            <td data-label="SAVOIR-ÊTRE">Rigueur, précision, autonomie</td>
+                            <td data-label="Exemple de situations précises">Usinage sur un tour d'un adaptateur pour une sonde de température d'une moto</td>
+                            <td data-label="Lien possible avec le stage">Connaissance du procédé</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">CAO avec CATIA V5</td>
+                            <td data-label="SAVOIRS">Maitrise de Catia V5</td>
+                            <td data-label="SAVOIR-FAIRE">Création de pièces en volumique et surfacique, assemblage, mise en plan selon normes ISO</td>
+                            <td data-label="SAVOIR-ÊTRE">Créativité, curiosité, méthode</td>
+                            <td data-label="Exemple de situations précises">Conception 3D du corps d'un robot multi pattes</td>
+                            <td data-label="Lien possible avec le stage">Mise en application des savoirs</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">Gestion de projet</td>
+                            <td data-label="SAVOIRS">Méthode et outils de planification</td>
+                            <td data-label="SAVOIR-FAIRE">Organisation de tâches, gestion d'équipe, communication technique</td>
+                            <td data-label="SAVOIR-ÊTRE">Organisation, écoute, leadership</td>
+                            <td data-label="Exemple de situations précises">Gestion d'une équipe participant à la Toulouse Robot Race</td>
+                            <td data-label="Lien possible avec le stage">Mise en application des méthodologies</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">Recherche et développement</td>
+                            <td data-label="SAVOIRS">Veille technologique, matériaux innovants, procédés de fabrication additive</td>
+                            <td data-label="SAVOIR-FAIRE">Identification de solutions techniques, expérimentation</td>
+                            <td data-label="SAVOIR-ÊTRE">Initiative, autonomie, curiosité</td>
+                            <td data-label="Exemple de situations précises">Conception d'un piège à insecte qui ne capture qu'une seule espèce</td>
+                            <td data-label="Lien possible avec le stage">Contribution à l'innovation produit</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Activités">Conception d'un prototype fonctionnel</td>
+                            <td data-label="SAVOIRS">Résistance des matériaux, assemblage mécanique, communication technique</td>
+                            <td data-label="SAVOIR-FAIRE">Conception 3D, assemblage, tests de validation</td>
+                            <td data-label="SAVOIR-ÊTRE">Travail en équipe, persévérance, sens de l'analyse</td>
+                            <td data-label="Exemple de situations précises">Support de Dashboard pour installation Sim racing</td>
+                            <td data-label="Lien possible avec le stage">Communication technique en milieu professionnel</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <p class="section-subtitle">N'hésitez pas à me contacter pour toute opportunité ou collaboration</p>
+            
+            <div class="contact-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="contact-info">
+                    <div class="contact-item" style="margin-bottom: 40px;">
+                        <i class="fas fa-envelope" style="font-size: 24px; color: #f8aa00; margin-bottom: 10px; display: block;"></i>
+                        <h4>Email</h4>
+                        <p><a href="mailto:samuel.guitton@ensam.eu" style="color: #f8aa00; text-decoration: none;">samuel.guitton@ensam.eu</a></p>
+                    </div>
+                    
+                    <div class="contact-item" style="margin-bottom: 40px;">
+                        <i class="fas fa-phone" style="font-size: 24px; color: #f8aa00; margin-bottom: 10px; display: block;"></i>
+                        <h4>Téléphone</h4>
+                        <p><a href="tel:0677342937" style="color: #f8aa00; text-decoration: none;">06 77 34 29 37</a></p>
+                    </div>
+                    
+                    <div class="social-links" style="margin-top: 40px;">
+                        <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin: 0 10px; color: #333; font-size: 24px;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/samuel_gn33" class="social-link" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin: 0 10px; color: #333; font-size: 24px;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+    // Configuration de la lightbox
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'showImageNumberLabel': false,
+        'alwaysShowNavOnTouchDevices': true,
+        'disableScrolling': true,
+        'fadeDuration': 200,
+        'imageFadeDuration': 200,
+        'fitImagesInViewport': true
+    });
+
+    // Script pour le bouton "Voir toutes les missions"
+    document.addEventListener('DOMContentLoaded', function() {
+        const showAllBtn = document.getElementById('showAllMissions');
+        const hiddenMissions = document.querySelectorAll('.mission-card[style*="display: none"]');
+        
+        if (showAllBtn && hiddenMissions.length > 0) {
+            showAllBtn.addEventListener('click', function() {
+                hiddenMissions.forEach(mission => {
+                    mission.style.display = 'block';
+                });
+                this.style.display = 'none';
+            });
+        } else if (showAllBtn) {
+            showAllBtn.style.display = 'none';
+        }
+
+        // Ajouter data-lightbox à toutes les images dans les fiches mission
+        const missionImages = document.querySelectorAll('.mission-card img');
+        missionImages.forEach(img => {
+            // Créer un lien parent pour la lightbox si ce n'est pas déjà fait
+            if (!img.parentElement.hasAttribute('data-lightbox')) {
+                const link = document.createElement('a');
+                link.href = img.src;
+                link.setAttribute('data-lightbox', 'mission-gallery');
+                link.setAttribute('data-title', img.alt || 'Image de la mission');
+                
+                // Remplacer l'image par le lien contenant l'image
+                img.parentNode.insertBefore(link, img);
+                link.appendChild(img);
+            }
+        });
+    });
+</script>
+</body>
+</html>
