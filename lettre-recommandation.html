@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plaquette de Formation | Samuel GUITTON</title>
+    <title>Lettre de Recommandation | Samuel GUITTON</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Styles spécifiques à la page des plaquettes */
+        /* Styles spécifiques à la page de la lettre de recommandation */
         .plaquette-container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 30px 20px 30px; /* Réduction du padding supérieur pour réduire l'espace */
+            padding: 30px 20px 30px;
         }
         
         .plaquette-header {
             text-align: center;
-            margin-bottom: 20px; /* Réduction de la marge inférieure */
+            margin-bottom: 20px;
         }
         
         .plaquette-header h1 {
@@ -122,8 +122,8 @@
                     <li><a href="index.html#competences" class="nav-link">Compétences</a></li>
                     <li><a href="index.html#projets" class="nav-link">Fiches Missions</a></li>
                     <li><a href="index.html#valorisation" class="nav-link">Expériences</a></li>
-                    <li><a href="#" class="nav-link" style="color: white; font-weight: 600;">Plaquette Formation</a></li>
-                    <li><a href="lettre-recommandation.html" class="nav-link" style="color: white; font-weight: 600;">Lettre de Recommandation</a></li>
+                    <li><a href="plaquettes.html" class="nav-link">Plaquette Formation</a></li>
+                    <li><a href="#" class="nav-link" style="color: white; font-weight: 600;">Lettre de Recommandation</a></li>
                     <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -137,8 +137,8 @@
                         <option value="index.html#competences">Compétences</option>
                         <option value="index.html#projets">Fiches Missions</option>
                         <option value="index.html#valorisation">Expériences</option>
-                        <option value="#" selected>Plaquette Formation</option>
-                        <option value="lettre-recommandation.html">Lettre de Recommandation</option>
+                        <option value="plaquettes.html">Plaquette Formation</option>
+                        <option value="#" selected>Lettre de Recommandation</option>
                         <option value="index.html#contact">Contact</option>
                     </select>
                 </div>
@@ -146,30 +146,27 @@
         </div>
     </header>
 
-    <!-- Section principale des plaquettes -->
+    <!-- Section principale de la lettre de recommandation -->
     <section class="plaquettes-section" style="padding: 80px 0 60px;">
         <div class="container">
             <div class="plaquette-header">
-                <h1>Plaquette de Formation</h1>
-                <p>Découvrez le programme détaillé du Bachelor de Technologie en Mécanique et Production</p>
+                <h1>Lettre de Recommandation</h1>
+                <p>Recommandation de mon tuteur de stage de deuxième année</p>
             </div>
             
             <div class="plaquette-container">
-                <!-- Première page de la plaquette -->
-                <div id="page1">
-                    <img src="assets/images/page_1.png" alt="Plaquette Bachelor - Page 1" class="plaquette-image">
-                    <p class="image-caption">Page 1/2 - Présentation du Bachelor de Technologie</p>
-                </div>
-                
-                <!-- Deuxième page de la plaquette -->
-                <div id="page2" style="margin-top: 60px;">
-                    <img src="assets/images/page_2.png" alt="Plaquette Bachelor - Page 2" class="plaquette-image">
-                    <p class="image-caption">Page 2/2 - Programme et débouchés</p>
+                <!-- Lettre de recommandation -->
+                <div id="lettre">
+                    <img src="page_01_600dpi.png" alt="Lettre de recommandation" class="plaquette-image">
+                    <p class="image-caption">Lettre de recommandation - Stage de deuxième année</p>
                 </div>
                 
                 <div class="plaquette-navigation">
-                    <a href="#page1" class="nav-btn">
-                        <i class="fas fa-arrow-up"></i> Revenir au début
+                    <a href="Lettre_recommandation_Samuel_Guitton.pdf" class="nav-btn" download="Lettre_recommandation_Samuel_Guitton.pdf">
+                        <i class="fas fa-download"></i> Télécharger en PDF
+                    </a>
+                    <a href="index.html" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Retour à l'accueil
                     </a>
                 </div>
             </div>
@@ -199,7 +196,6 @@
             // Détection du chargement des images
             const images = document.querySelectorAll('.plaquette-image');
             images.forEach(img => {
-                // Ajouter une classe quand l'image est chargée
                 if (img.complete) {
                     img.classList.add('loaded');
                 } else {
@@ -216,7 +212,6 @@
             const mobileMenu = document.getElementById('mobile-menu');
             
             if (mobileMenu) {
-                // Fonction pour gérer la navigation
                 const handleNavigation = () => {
                     const selectedValue = mobileMenu.value;
                     if (selectedValue) {
@@ -227,7 +222,6 @@
                                 mobileMenu.blur();
                             }
                         } else if (selectedValue === '#') {
-                            // Ne rien faire si c'est la page actuelle
                             mobileMenu.selectedIndex = 0;
                         } else {
                             window.location.href = selectedValue;
@@ -235,7 +229,6 @@
                     }
                 };
                 
-                // Écouter les changements de sélection
                 mobileMenu.addEventListener('change', function() {
                     const selectedValue = this.value;
                     if (selectedValue) {
@@ -246,15 +239,13 @@
                                 this.blur();
                             }
                         } else if (selectedValue === '#') {
-                            // Ne rien faire si c'est la page actuelle
-                            this.selectedIndex = 0;
+                            mobileMenu.selectedIndex = 0;
                         } else {
                             window.location.href = selectedValue;
                         }
                     }
                 });
                 
-                // Désactiver le clavier virtuel sur iOS
                 mobileMenu.addEventListener('focus', function() {
                     this.blur();
                 });

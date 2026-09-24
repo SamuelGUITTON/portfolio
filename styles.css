@@ -119,7 +119,7 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: 1fr;
     gap: 35px;
     margin: 0 auto;
     max-width: 1400px;
@@ -581,7 +581,7 @@
 /* Styles responsifs */
 @media (max-width: 1200px) {
     .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 }
@@ -924,7 +924,7 @@
 /* Responsive */
 @media (max-width: 1200px) {
     .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 }
@@ -1289,6 +1289,7 @@ header.navbar {
     transition: all 0.3s ease;
     display: block;
     white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 /* Style pour le lien actif */
